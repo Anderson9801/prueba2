@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light" data-menu-styles="dark" data-toggled="close">
+
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Inicio </title>
+    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+    <meta name="Author" content="Spruko Technologies Private Limited">
+	<meta name="keywords" content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../static/images/brand-logos/favicon.ico" type="image/x-icon">
+    
+    <!-- Choices JS -->
+    <script src="../static/libs/choices.js/public/static/scripts/choices.min.js"></script>
+
+    <!-- Main Theme Js -->
+    <script src="../static/js/main.js"></script>
+    
+    <!-- Bootstrap Css -->
+    <link id="style" href="../static/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+
+    <!-- Style Css -->
+    <link href="../static/css/styles.min.css" rel="stylesheet" >
+
+    <!-- Icons Css -->
+    <link href="../static/css/icons.css" rel="stylesheet" >
+
+    <!-- Node Waves Css -->
+    <link href="../static/libs/node-waves/waves.min.css" rel="stylesheet" > 
+
+    <!-- Simplebar Css -->
+    <link href="../static/libs/simplebar/simplebar.min.css" rel="stylesheet" >
+    
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../static/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/libs/@simonwep/pickr/themes/nano.min.css">
+
+    <!-- Choices Css -->
+    <link rel="stylesheet" href="../static/libs/choices.js/public/static/styles/choices.min.css">
+
+
+<link rel="stylesheet" href="../static/libs/jsvectormap/css/jsvectormap.min.css">
+
+<link rel="stylesheet" href="../static/libs/swiper/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+    <!-- Start Switcher -->
+    
+    <!-- End Switcher -->
+
+    <div class="page">
+         <!-- app-header -->
+         <header class="app-header">
+
+            <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid">
+
+                <!-- Start::header-content-left -->
+                <div class="header-content-left">
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="index.html" class="header-logo">
+                                <img src="../static/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="../static/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                                <img src="../static/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                                <img src="../static/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link -->
+                        <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
+                        <!-- End::header-link -->
+                    </div>
+                    <!-- End::header-element -->
+
+                </div>
+                <!-- End::header-content-left -->
+
+                <!-- Start::header-content-right -->
+                <div class="header-content-right">
+                    
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link|dropdown-toggle -->
+                        <a href="#" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            <div class="d-flex align-items-center">
+                                <div class="me-sm-2 me-0">
+                                    <img src="../static/images/faces/perfil.png" alt="img" width="32" height="32" class="rounded-circle">
+                                </div>
+                                {% if username %}
+                                    <div class="d-sm-block d-none">
+                                        <p class="fw-semibold mb-0 lh-1">{{username[0]}}</p>
+                                        <span class="op-7 fw-normal d-block fs-11">{{username[1]}}</span>
+                                    </div>
+                                {%else%}
+                                    
+                                {% endif %}
+                            </div>
+                        </a>
+                        <!-- End::header-link|dropdown-toggle -->
+                        <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden dropdown-menu-end" aria-labelledby="mainHeaderProfile">
+                            <li><button data-bs-toggle="modal" data-bs-target="#modalPassword"  class="dropdown-item d-flex" href=""><i class="ri-lock-password-line"></i>&nbsp;Contraseña</button></li>
+                            {% if config_empresa == True %}
+                            <li><a href="/config-general" class="dropdown-item d-flex" href=""><i class="ri-tools-fill"></i>&nbsp;Config. Empresa</a></li>
+                            {%else%}
+                            {% endif %}
+                            <li><a href="/logout" class="dropdown-item d-flex border-block-end" href=""><i class="ri-logout-box-r-line"></i>&nbsp;Cerrar Sesión</a></li>
+                        </ul>
+                    </div>  
+                    
+
+                </div>
+                
+
+            </div>
+            
+
+        </header>
+        <!-- /app-header -->
+        <!-- Start::app-sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar">
+
+            <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header">
+                <a href="/empresa-ventas" class="header-logo">
+                    <img src="../static/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    <img src="../static/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                    <img src="../static/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                    <img src="../static/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                </a>
+            </div>
+            <!-- End::main-sidebar-header -->
+
+            <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll">
+
+                <!-- Start::nav -->
+                <nav class="main-menu-container nav nav-pills flex-column sub-open">
+                    <div class="slide-left" id="slide-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path> </svg>
+                    </div>
+                    <ul class="main-menu">
+                        <!-- Start::slide__category -->
+                        <!-- End::slide__category -->
+
+                        <!-- Start::slide -->
+                        <li class="slide has-sub">
+                            <a href="/empresa-ventas" class="side-menu__item">
+                                <i class="bx bx-home side-menu__icon"></i>
+                                <span class="side-menu__label">Inicio</span>
+                                
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Inicio</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <!-- End::slide -->
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bx-diamond side-menu__icon'></i>
+                                <span class="side-menu__label">Gestión de Ventas</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Gestión de Ventas</a>
+                                </li>
+                                <li class="slide has-sub">
+                                    <a href="javascript:void(0);" class="side-menu__item">Sede 1
+                                        <i class="bx bx-chevron-right side-menu__angle"></i></a>
+                                        <ul class="slide-menu child2">
+                                            <li class="slide">
+                                                <a href="ventas.html" class="side-menu__item">Claro Hogar</a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="ventas.html" class="side-menu__item">Claro Móvil</a>
+                                            </li>
+                                            
+                                        </ul>
+                                </li>
+                                <li class="slide has-sub">
+                                    <a href="javascript:void(0);" class="side-menu__item">Sede 2
+                                        <i class="bx bx-chevron-right side-menu__angle"></i></a>
+                                        <ul class="slide-menu child2">
+                                            <li class="slide">
+                                                <a href="ventas.html" class="side-menu__item">Claro Hogar</a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="ventas.html" class="side-menu__item">Claro Móvil</a>
+                                            </li>
+                                            
+                                        </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="/recordatorios" class="side-menu__item">
+                                <i class='bx bxs-calendar side-menu__icon'></i>
+                                <span class="side-menu__label">Recordatorios</span>
+                                
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Recordatorios</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+
+                        {% if config_campanas == True %}
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-cog side-menu__icon'></i>
+                                <span class="side-menu__label">Config. Campañas</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Config. Campañas</a>
+                                </li>
+
+                                {% if campanas == True %}
+                                <li class="slide">
+                                    <a href="/campanas" class="side-menu__item">Canpañas</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+                                {% if pestanas == True %}
+                                <li class="slide">
+                                    <a href="/pestanas" class="side-menu__item">Pestañas de estados</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+                                {% if estados == True %}
+                                <li class="slide">
+                                    <a href="/estados" class="side-menu__item">Estados</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+                                {% if bloques == True %}
+                                <li class="slide">
+                                    <a href="/bloques" class="side-menu__item">Bloques de Campos</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+                                {% if campos == True %}
+                                <li class="slide">
+                                    <a href="/campos" class="side-menu__item">Campos</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+
+                            </ul>
+                        </li>
+                        {%else%}
+                        {% endif %}
+                    
+
+
+
+
+
+                        {% if reportes_ventas == True %}
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-pie-chart-alt-2 side-menu__icon' ></i>
+                                <span class="side-menu__label">Reportes</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Reportes</a>
+                                </li>
+
+
+
+
+
+                                {% if reportes1 == True %}
+                                <li class="slide">
+                                    <a href="/estados-ventas" class="side-menu__item">Estados de Venta</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+                    
+
+
+                                {% if reportes2 == True %}
+                                <li class="slide">
+                                    <a href="/ranking" class="side-menu__item">Ranking de Vendedores</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+                        
+                            </ul>
+                        </li>
+                        {%else%}
+                        {% endif %}
+                    
+
+
+                        <!-- End::slide -->
+                    </ul>
+                    <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path> </svg></div>
+                </nav>
+                <!-- End::nav -->
+
+            </div>
+            <!-- End::main-sidebar -->
+
+        </aside>
+        <!-- End::app-sidebar -->
+        <br>
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+
+                <!-- Page Header -->
+                <div class="d-md-flex d-block align-items-center justify-content-between my-4 page-header-breadcrumb">
+                    <h1 class="page-title fw-semibold fs-18 mb-0">Timeline</h1>
+                    
+                </div>
+                <!-- Page Header Close -->
+
+                <div class="container-lg">
+                    <!-- Start::row-1 -->
+                    <div class="row justify-content-center">
+                        <div class="col-xxl-8 col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <ul class="list-unstyled mb-0 notification-container">
+
+
+                        {% if actividades %}
+
+                            {% for actividad in actividades -%}
+
+                                
+                                <li>
+                                    <div class="card custom-card un-read">
+                                        <div class="card-body p-3">
+                                            <a href="javascript:void(0);">
+                                                <div class="d-flex align-items-top mt-0 flex-wrap">
+                                                    <div class="lh-1">
+                                                        <span class="avatar avatar-md online me-3 avatar-rounded">
+                                                            <img alt="avatar" src="../static/images/faces/perfil.png">
+                                                        </span>
+                                                    </div>
+                                                    <div class="flex-fill">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="mt-sm-0 mt-2">
+                                                                <p class="mb-0 fs-14 fw-semibold">{{actividad[1]}}</p>
+                                                                <p class="mb-0 text-muted">{{actividad[2]}}</p>
+                                                            {% if actividad[3].strftime('%Y-%m-%d') == ahora.strftime('%Y-%m-%d') %}
+                                                                <span class="mb-0 d-block text-muted fs-12">Hoy - {{actividad[3].strftime('%H:%M:%S')}}</span>
+                                                            {%else%}   
+                                                                <span class="mb-0 d-block text-muted fs-12">{{actividad[3].strftime('%Y-%m-%d')}} - {{actividad[3].strftime('%H:%M:%S')}}</span>
+                                                            {% endif %}
+                                                            </div>
+                                                            <div class="ms-auto">
+                                                                <span class="float-end badge bg-light text-muted fs-6">
+                                                                    {{actividad[4]}}
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>    
+                                        </div>
+                                    </div>
+                                </li>
+
+                            {% endfor -%}
+
+                        {%else%}
+                        {% endif %}
+        
+
+                            </ul>
+                           <!-- <div class="text-center">
+                                <button class="btn btn-info-transparent btn-loader my-3 mx-auto">
+                                    <span class="me-2">Loading</span>
+                                    <span class="loading"><i class="ri-loader-4-line fs-16"></i></span>
+                                </button>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!--End::row-1 -->
+                </div>
+
+            </div>
+        </div>
+                
+        <!-- End::app-content -->
+        <div class="modal fade" id="modalPassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cambiar Contraseña</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <form action="/change-password" method="post" class="row gy-4">
+
+                        <div class="col-md-6 col-sm-12">
+                            <p class="mb-2 text-muted">Antigua Contraseña</p>
+                            <input type="password" class="form-control" id="old-password" name="old-password">
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <p class="mb-2 text-muted">Nueva Contraseña</p>
+                            <input type="password" class="form-control" id="new-password" name="new-password" >
+                        </div>
+                        
+                        <div class="col-sm-12 d-flex justify-content-center">
+                            <input type="submit" class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mx-auto btn btn-primary" value="Cambiar Contraseña"></input>
+                        </div>
+                    
+
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Footer Start -->
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <div class="container">
+                <span class="text-muted"> Copyright © <span id="year"></span> <a
+                        href="javascript:void(0);" class="text-dark fw-semibold">LanTech</a>.
+                    Designed with <span class="bi bi-heart-fill text-danger"></span> by <a href="https://www.lantechperu.com">
+                        <span class="fw-semibold text-primary text-decoration-underline">LanTech S.A.C.</span>
+                    </a> All
+                    rights
+                    reserved
+                </span>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+    </div>
+
+    
+    <div class="scrollToTop">
+        <span class="arrow"><i class="ri-arrow-up-s-fill fs-20"></i></span>
+    </div>
+    <div id="responsive-overlay"></div>
+
+    <!-- Popper JS -->
+    <script src="../static/libs/@popperjs/core/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Defaultmenu JS -->
+    <script src="../static/js/defaultmenu.min.js"></script>
+
+    <!-- Node Waves JS-->
+    <script src="../static/libs/node-waves/waves.min.js"></script>
+
+    <!-- Sticky JS -->
+    <script src="../static/js/sticky.js"></script>
+
+    <!-- Simplebar JS -->
+    <script src="../static/libs/simplebar/simplebar.min.js"></script>
+    <script src="../static/js/simplebar.js"></script>
+
+    <!-- Color Picker JS -->
+    <script src="../static/libs/@simonwep/pickr/pickr.es5.min.js"></script>
+
+
+    <!-- JSVector Maps JS -->
+    <script src="../static/libs/jsvectormap/js/jsvectormap.min.js"></script>
+
+    <!-- JSVector Maps MapsJS -->
+    <script src="../static/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!-- Apex Charts JS -->
+    <script src="../static/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Chartjs Chart JS -->
+    <script src="../static/libs/chart.js/chart.min.js"></script>
+
+    <!-- CRM-Dashboard -->
+    <script src="../static/js/crm-dashboard.js"></script>
+
+    
+    <!-- Custom-Switcher JS -->
+    <script src="../static/js/custom-switcher.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../static/js/custom.js"></script>
+
+</body>
+
+</html>

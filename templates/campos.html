@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light" data-menu-styles="dark" data-toggled="close">
+
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Campos </title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../static/images/brand-logos/favicon.ico" type="image/x-icon">
+    
+    <!-- Choices JS -->
+    <script src="../static/libs/choices.js/public/static/scripts/choices.min.js"></script>
+
+    <!-- Main Theme Js -->
+    <script src="../static/js/main.js"></script>
+    
+    <!-- Bootstrap Css -->
+    <link id="style" href="../static/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+
+    <!-- Style Css -->
+    <link href="../static/css/styles.min.css" rel="stylesheet" >
+
+    <!-- Icons Css -->
+    <link href="../static/css/icons.css" rel="stylesheet" >
+
+    <!-- Node Waves Css -->
+    <link href="../static/libs/node-waves/waves.min.css" rel="stylesheet" > 
+
+    <!-- Simplebar Css -->
+    <link href="../static/libs/simplebar/simplebar.min.css" rel="stylesheet" >
+    
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../static/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/libs/@simonwep/pickr/themes/nano.min.css">
+
+    <!-- Choices Css -->
+    <link rel="stylesheet" href="../static/libs/choices.js/public/static/styles/choices.min.css">
+
+
+    <link rel="stylesheet" href="../static/libs/jsvectormap/css/jsvectormap.min.css">
+
+    <link rel="stylesheet" href="../static/libs/swiper/swiper-bundle.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.5/dist/css/select2.min.css" rel="stylesheet">
+
+    
+</head>
+
+<body>
+
+    <!-- Start Switcher -->
+    
+    <!-- End Switcher -->
+
+    <div class="page">
+         <!-- app-header -->
+         <header class="app-header">
+
+            <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid">
+
+                <!-- Start::header-content-left -->
+                <div class="header-content-left">
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="index.html" class="header-logo">
+                                <img src="../static/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="../static/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                                <img src="../static/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                                <img src="../static/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link -->
+                        <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
+                        <!-- End::header-link -->
+                    </div>
+                    <!-- End::header-element -->
+
+                </div>
+                <!-- End::header-content-left -->
+
+                <!-- Start::header-content-right -->
+                <div class="header-content-right">
+                    
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link|dropdown-toggle -->
+                        <a href="#" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            <div class="d-flex align-items-center">
+                                <div class="me-sm-2 me-0">
+                                    <img src="../static/images/faces/perfil.png" alt="img" width="32" height="32" class="rounded-circle">
+                                </div>
+                                {% if username %}
+                                    <div class="d-sm-block d-none">
+                                        <p class="fw-semibold mb-0 lh-1">{{username[0]}}</p>
+                                        <span class="op-7 fw-normal d-block fs-11">{{username[1]}}</span>
+                                    </div>
+                                {%else%}
+                                    
+                                {% endif %}
+                            </div>
+                        </a>
+                        <!-- End::header-link|dropdown-toggle -->
+                        <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden dropdown-menu-end" aria-labelledby="mainHeaderProfile">
+                            <li><button data-bs-toggle="modal" data-bs-target="#modalPassword"  class="dropdown-item d-flex" href=""><i class="ri-lock-password-line"></i>&nbsp;Contraseña</button></li>
+                            
+                            {% if config_empresa == True %}
+                            <li><a href="/config-general" class="dropdown-item d-flex" href=""><i class="ri-tools-fill"></i>&nbsp;Config. Empresa</a></li>
+                            {%else%}
+                            {% endif %}
+                                                        
+                            <li><a href="/logout" class="dropdown-item d-flex border-block-end" href=""><i class="ri-logout-box-r-line"></i>&nbsp;Cerrar Sesión</a></li>
+                        </ul>
+                    </div>  
+                    
+
+                </div>
+                
+
+            </div>
+            
+
+        </header>
+        <!-- /app-header -->
+        <!-- Start::app-sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar">
+
+            <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header">
+                <a href="/empresa-ventas" class="header-logo">
+                    <img src="../static/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    <img src="../static/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                    <img src="../static/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                    <img src="../static/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                </a>
+            </div>
+            <!-- End::main-sidebar-header -->
+
+            <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll">
+
+                <!-- Start::nav -->
+                <nav class="main-menu-container nav nav-pills flex-column sub-open">
+                    <div class="slide-left" id="slide-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path> </svg>
+                    </div>
+                    <ul class="main-menu">
+                        <!-- Start::slide__category -->
+                        <!-- End::slide__category -->
+
+                        <!-- Start::slide -->
+                        <li class="slide has-sub">
+                            <a href="/empresa-ventas" class="side-menu__item">
+                                <i class="bx bx-home side-menu__icon"></i>
+                                <span class="side-menu__label">Inicio</span>
+                                
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Inicio</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <!-- End::slide -->
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bx-diamond side-menu__icon'></i>
+                                <span class="side-menu__label">Gestión de Ventas</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Gestión de Ventas</a>
+                                </li>
+                                <li class="slide has-sub">
+                                    <a href="javascript:void(0);" class="side-menu__item">Sede 1
+                                        <i class="bx bx-chevron-right side-menu__angle"></i></a>
+                                        <ul class="slide-menu child2">
+                                            <li class="slide">
+                                                <a href="ventas.html" class="side-menu__item">Claro Hogar</a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="ventas.html" class="side-menu__item">Claro Móvil</a>
+                                            </li>
+                                            
+                                        </ul>
+                                </li>
+                                <li class="slide has-sub">
+                                    <a href="javascript:void(0);" class="side-menu__item">Sede 2
+                                        <i class="bx bx-chevron-right side-menu__angle"></i></a>
+                                        <ul class="slide-menu child2">
+                                            <li class="slide">
+                                                <a href="ventas.html" class="side-menu__item">Claro Hogar</a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="ventas.html" class="side-menu__item">Claro Móvil</a>
+                                            </li>
+                                            
+                                        </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="/recordatorios" class="side-menu__item">
+                                <i class='bx bxs-calendar side-menu__icon'></i>
+                                <span class="side-menu__label">Recordatorios</span>
+                                
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Recordatorios</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+
+                        {% if config_campanas == True %}
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-cog side-menu__icon'></i>
+                                <span class="side-menu__label">Config. Campañas</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Config. Campañas</a>
+                                </li>
+
+                                {% if campanas == True %}
+                                <li class="slide">
+                                    <a href="/campanas" class="side-menu__item">Canpañas</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+                                {% if pestanas == True %}
+                                <li class="slide">
+                                    <a href="/pestanas" class="side-menu__item">Pestañas de estados</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+                                {% if estados == True %}
+                                <li class="slide">
+                                    <a href="/estados" class="side-menu__item">Estados</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+                                {% if bloques == True %}
+                                <li class="slide">
+                                    <a href="/bloques" class="side-menu__item">Bloques de Campos</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+                                {% if campos == True %}
+                                <li class="slide">
+                                    <a href="/campos" class="side-menu__item">Campos</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+
+                            </ul>
+                        </li>
+                        {%else%}
+                        {% endif %}
+                    
+
+
+
+
+
+                        {% if reportes_ventas == True %}
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-pie-chart-alt-2 side-menu__icon' ></i>
+                                <span class="side-menu__label">Reportes</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Reportes</a>
+                                </li>
+
+
+
+
+
+                                {% if reportes1 == True %}
+                                <li class="slide">
+                                    <a href="/estados-ventas" class="side-menu__item">Estados de Venta</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+                    
+
+
+                                {% if reportes2 == True %}
+                                <li class="slide">
+                                    <a href="/ranking" class="side-menu__item">Ranking de Vendedores</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+                        
+                            </ul>
+                        </li>
+                        {%else%}
+                        {% endif %}
+                    
+
+
+                        <!-- End::slide -->
+                    </ul>
+                    <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path> </svg></div>
+                </nav>
+                <!-- End::nav -->
+
+            </div>
+            <!-- End::main-sidebar -->
+
+        </aside>
+        <!-- End::app-sidebar -->
+        <br>
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between">
+                                <div class="card-title">
+                                    Campos
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-success btn-wave" data-bs-toggle="modal" data-bs-target="#modalCrear"><i class="bi bi-plus-lg"></i> Crear Nuevo</button>
+                                    <button type="button" class="btn btn-success btn-wave export-excel mx-2" style="background-color: #6610f2 !important; border-color: #6610f2 !important;"><i class="bi bi-file-earmark-spreadsheet"></i> Exportar</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-download text-nowrap">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Bloque de Campos</th>
+                                                <th scope="col">Campaña</th>
+                                                <th scope="col">Sede</th>
+                                                <th scope="col">Estados</th>
+                                                <th scope="col">Tipo</th>
+                                                <th scope="col">Obligatorio</th>
+                                                <th scope="col">Orden</th>
+                                                <th>Pueden acceder a este campo [edición]</th>
+                                                <th>Pueden acceder a este campo [visualización]</th>
+                                                
+                                                
+                                                
+                                                <th scope="col">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% if datosC %}
+                                            {% for datoC in datosC%}
+                                            <tr>
+                                                <th scope="row">{{datoC[1]}}</th>
+                                                <td>{{datoC[3]}}</td>
+                                                <td>{{datoC[5]}}</td>
+                                                <td>{{datoC[7]}}</td>
+                                                
+                                                <td> 
+                                                {% if ecs %}
+                                                {% for ec in ecs %}
+
+                                                {% if ec[2]==datoC[0]%}
+                                                {{ec[1]}}<br>
+                                                {%else%}
+                                                {%endif%}
+
+                                                {%endfor%}
+                                                {%else%}
+                                                {%endif%}
+                                                </td>
+
+                                                {%if datoC[9]==1 %}
+                                                <td>Texto Corto</td>
+                                                {%elif datoC[9]==2 %}
+                                                <td>Texto Largo</td>
+                                                {%elif datoC[9]==3 %}
+                                                <td>Selección</td>
+                                                {%elif datoC[9]==4 %}
+                                                <td>Fecha</td>
+                                                {%elif datoC[9]==5 %}
+                                                <td>Fecha y Hora</td>
+                                                {%elif datoC[9]==6 %}
+                                                <td>Numérico</td>
+                                                {%elif datoC[9]==7 %}
+                                                <td>Archivo</td>
+                                                {% else %}
+                                                {% endif %}
+
+                                                {% if datoC[10]==True %}
+                                                <td>Si</td>
+                                                {%else%}
+                                                <td>No</td>
+                                                {%endif%}
+
+                                                <td>{{datoC[8]}}°</td>
+
+
+
+
+                                                <td>
+                                                {% if pgcs %}
+                                                {% for pgc in pgcs -%}
+                                                
+                                                {% if pgc[4]==1 and pgc[0]==datoC[0]  %}
+                                                {{pgc[3]}}<br>
+                                                {%else%}
+                                                {% endif %}
+                                                
+                                                {% endfor -%}
+                                                {%else%}                             
+                                                {% endif %}
+                                                </td>
+
+                                                
+
+
+                                                <td>
+                                                {% if pgcs %}
+                                                {% for pgc in pgcs -%}
+                                                
+                                                {% if pgc[4]==2 and pgc[0]==datoC[0]  %}
+                                                {{pgc[3]}} <br>
+                                                {%else%}
+                                                {% endif %}
+                                                
+                                                {% endfor -%}
+                                                {%else%}                             
+                                                {% endif %}
+                                                </td>
+                                                
+                                                
+                                                <td>
+                                                    <div class="hstack gap-2 fs-15">
+                                                        
+                                                        <button data-bs-toggle="modal" data-bs-target="#modalEditar{{datoC[0]}}" class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i class="ri-edit-line"></i></button>
+                                                        <a href="/campos/delete/{{datoC[0]}}" class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i class="ri-delete-bin-line"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            {% endfor %}
+                                            {% else %}
+                                            <p>No hay información.</p>
+                                            {% endif %}
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {% if datosC %}
+        {% for datoC in datosC%}
+
+        <div class="modal fade" id="modalEditar{{datoC[0]}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Campo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/campos/editar/{{datoC[0]}}" method="post">
+                        
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div class="col-7">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required value="{{datoC[1]}}">
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label" for="orden">Orden</label>
+                                <input value="{{datoC[8]}}" class="form-control" type="number" name="orden" id="orden" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div class="col-6">
+                                <label class="form-label" for="bloque">Bloque de Campo [vacío=cabecera]</label>
+                                <select class="form-control" name="bloque" id="bloque" required>
+
+                                    
+                                    
+                                {% if BCSposts %}
+                                    
+                                    {% for BCSpost in BCSposts%}
+                                        {% if BCSpost[0]==datoC[2] %}
+                                        <option selected value="{{BCSpost[0]}}">{{BCSpost[1]}} - {{BCSpost[4]}} - {{BCSpost[6]}}</option>
+                                        {%else%}
+                                        <option value="{{BCSpost[0]}}">{{BCSpost[1]}} - {{BCSpost[4]}} - {{BCSpost[6]}}</option>
+                                        {%endif%}    
+                                    {%endfor%}
+                                {%else%}
+                                {%endif%}
+
+
+
+                                </select>
+                            </div>
+                            <div class="col-5">
+                                <label class="form-label" for="type">Tipo de campo</label>
+                                <select class="form-control" name="type" id="type" required>
+                                    
+                                    {%if datoC[9]==1 %}
+                                    <option selected value="1">Texto Corto</option>
+                                    <option value="2">Texto Largo</option>
+                                    <option value="3">Selección</option>
+                                    <option value="4">Fecha</option>
+                                    <option value="5">Fecha y Hora</option>
+                                    <option value="6">Numérico</option>
+                                    <option value="7">Archivo</option>
+                                    {%elif datoC[9]==2 %}
+                                    <option value="1">Texto Corto</option>
+                                    <option selected value="2">Texto Largo</option>
+                                    <option value="3">Selección</option>
+                                    <option value="4">Fecha</option>
+                                    <option value="5">Fecha y Hora</option>
+                                    <option value="6">Numérico</option>
+                                    <option value="7">Archivo</option>
+                                    {%elif datoC[9]==3 %}
+                                    <option value="1">Texto Corto</option>
+                                    <option value="2">Texto Largo</option>
+                                    <option selected value="3">Selección</option>
+                                    <option value="4">Fecha</option>
+                                    <option value="5">Fecha y Hora</option>
+                                    <option value="6">Numérico</option>
+                                    <option value="7">Archivo</option>
+                                    {%elif datoC[9]==4 %}
+                                    <option value="1">Texto Corto</option>
+                                    <option value="2">Texto Largo</option>
+                                    <option  value="3">Selección</option>
+                                    <option selected value="4">Fecha</option>
+                                    <option value="5">Fecha y Hora</option>
+                                    <option value="6">Numérico</option>
+                                    <option value="7">Archivo</option>
+                                    {%elif datoC[9]==5 %}
+                                    <option value="1">Texto Corto</option>
+                                    <option value="2">Texto Largo</option>
+                                    <option  value="3">Selección</option>
+                                    <option  value="4">Fecha</option>
+                                    <option selected value="5">Fecha y Hora</option>
+                                    <option value="6">Numérico</option>
+                                    <option value="7">Archivo</option>
+                                    {%elif datoC[9]==6 %}
+                                    <option value="1">Texto Corto</option>
+                                    <option value="2">Texto Largo</option>
+                                    <option  value="3">Selección</option>
+                                    <option  value="4">Fecha</option>
+                                    <option  value="5">Fecha y Hora</option>
+                                    <option selected value="6">Numérico</option>
+                                    <option value="7">Archivo</option>
+                                    {%elif datoC[9]==7 %}
+                                    <option value="1">Texto Corto</option>
+                                    <option value="2">Texto Largo</option>
+                                    <option  value="3">Selección</option>
+                                    <option  value="4">Fecha</option>
+                                    <option  value="5">Fecha y Hora</option>
+                                    <option  value="6">Numérico</option>
+                                    <option selected value="7">Archivo</option>
+                                    {% else %}
+                                    {% endif %}
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3 d-flex justify-content-between">
+
+                            <div class="col-5">
+                                <label for="ancho" class="form-label">Ancho de Campo</label>
+                          
+                                <select name="ancho" id="ancho" class="form-control" required>
+                                    
+                                    {% if datoC[13]=="col-md-1" %}
+                                    <option selected value="col-md-1">01/12 | 08.33%</option>
+                                    <option value="col-md-2">02/12 | 16.66%</option>
+                                    <option value="col-md-3">03/12 | 25.00%</option>
+                                    <option value="col-md-4">04/12 | 33.33%</option>
+                                    <option value="col-md-6">06/12 | 50.00%</option>
+                                    <option value="col-md-8">08/12 | 66.66%</option>
+                                    <option value="col-md-9">09/12 | 75.00%</option>
+                                    <option value="col-md-10">10/12 | 83.33%</option>
+                                    <option value="col-md-12">12/12 | 100.00%</option>
+                                    {% elif datoC[13]=="col-md-2" %}
+                                    <option value="col-md-1">01/12 | 08.33%</option>
+                                    <option  selected value="col-md-2">02/12 | 16.66%</option>
+                                    <option value="col-md-3">03/12 | 25.00%</option>
+                                    <option value="col-md-4">04/12 | 33.33%</option>
+                                    <option value="col-md-6">06/12 | 50.00%</option>
+                                    <option value="col-md-8">08/12 | 66.66%</option>
+                                    <option value="col-md-9">09/12 | 75.00%</option>
+                                    <option value="col-md-10">10/12 | 83.33%</option>
+                                    <option value="col-md-12">12/12 | 100.00%</option>
+                                    {% elif datoC[13]=="col-md-3" %}
+                                    <option value="col-md-1">01/12 | 08.33%</option>
+                                    <option value="col-md-2">02/12 | 16.66%</option>
+                                    <option  selected value="col-md-3">03/12 | 25.00%</option>
+                                    <option value="col-md-4">04/12 | 33.33%</option>
+                                    <option value="col-md-6">06/12 | 50.00%</option>
+                                    <option value="col-md-8">08/12 | 66.66%</option>
+                                    <option value="col-md-9">09/12 | 75.00%</option>
+                                    <option value="col-md-10">10/12 | 83.33%</option>
+                                    <option value="col-md-12">12/12 | 100.00%</option>
+                                    {% elif datoC[13]=="col-md-4" %}
+                                    <option value="col-md-1">01/12 | 08.33%</option>
+                                    <option value="col-md-2">02/12 | 16.66%</option>
+                                    <option value="col-md-3">03/12 | 25.00%</option>
+                                    <option selected  value="col-md-4">04/12 | 33.33%</option>
+                                    <option value="col-md-6">06/12 | 50.00%</option>
+                                    <option value="col-md-8">08/12 | 66.66%</option>
+                                    <option value="col-md-9">09/12 | 75.00%</option>
+                                    <option value="col-md-10">10/12 | 83.33%</option>
+                                    <option value="col-md-12">12/12 | 100.00%</option>
+                                    {% elif datoC[13]=="col-md-6" %}
+                                    <option value="col-md-1">01/12 | 08.33%</option>
+                                    <option value="col-md-2">02/12 | 16.66%</option>
+                                    <option value="col-md-3">03/12 | 25.00%</option>
+                                    <option value="col-md-4">04/12 | 33.33%</option>
+                                    <option  selected value="col-md-6">06/12 | 50.00%</option>
+                                    <option value="col-md-8">08/12 | 66.66%</option>
+                                    <option value="col-md-9">09/12 | 75.00%</option>
+                                    <option value="col-md-10">10/12 | 83.33%</option>
+                                    <option value="col-md-12">12/12 | 100.00%</option>
+                                    {% elif datoC[13]=="col-md-8" %}
+                                    <option value="col-md-1">01/12 | 08.33%</option>
+                                    <option value="col-md-2">02/12 | 16.66%</option>
+                                    <option value="col-md-3">03/12 | 25.00%</option>
+                                    <option value="col-md-4">04/12 | 33.33%</option>
+                                    <option value="col-md-6">06/12 | 50.00%</option>
+                                    <option selected  value="col-md-8">08/12 | 66.66%</option>
+                                    <option value="col-md-9">09/12 | 75.00%</option>
+                                    <option value="col-md-10">10/12 | 83.33%</option>
+                                    <option value="col-md-12">12/12 | 100.00%</option>
+                                    {% elif datoC[13]=="col-md-9" %}
+                                    <option value="col-md-1">01/12 | 08.33%</option>
+                                    <option value="col-md-2">02/12 | 16.66%</option>
+                                    <option value="col-md-3">03/12 | 25.00%</option>
+                                    <option value="col-md-4">04/12 | 33.33%</option>
+                                    <option value="col-md-6">06/12 | 50.00%</option>
+                                    <option value="col-md-8">08/12 | 66.66%</option>
+                                    <option selected  value="col-md-9">09/12 | 75.00%</option>
+                                    <option value="col-md-10">10/12 | 83.33%</option>
+                                    <option value="col-md-12">12/12 | 100.00%</option>
+                                    {% elif datoC[13]=="col-md-10" %}
+                                    <option value="col-md-1">01/12 | 08.33%</option>
+                                    <option value="col-md-2">02/12 | 16.66%</option>
+                                    <option value="col-md-3">03/12 | 25.00%</option>
+                                    <option value="col-md-4">04/12 | 33.33%</option>
+                                    <option value="col-md-6">06/12 | 50.00%</option>
+                                    <option value="col-md-8">08/12 | 66.66%</option>
+                                    <option value="col-md-9">09/12 | 75.00%</option>
+                                    <option  selected value="col-md-10">10/12 | 83.33%</option>
+                                    <option value="col-md-12">12/12 | 100.00%</option>
+                                    {% elif datoC[13]=="col-md-12" %}
+                                    <option value="col-md-1">01/12 | 08.33%</option>
+                                    <option value="col-md-2">02/12 | 16.66%</option>
+                                    <option value="col-md-3">03/12 | 25.00%</option>
+                                    <option value="col-md-4">04/12 | 33.33%</option>
+                                    <option value="col-md-6">06/12 | 50.00%</option>
+                                    <option value="col-md-8">08/12 | 66.66%</option>
+                                    <option value="col-md-9">09/12 | 75.00%</option>
+                                    <option value="col-md-10">10/12 | 83.33%</option>
+                                    <option  selected value="col-md-12">12/12 | 100.00%</option>
+                                    {%endif%}
+                                </select>
+                            </div>
+
+                            <div class="col-5">
+                                <label class="form-label" for="obligatorio">Es obligatorio</label>
+                                <select class="form-control" name="obligatorio" id="obligatorio" required>
+
+
+                                    {% if datoC[10]==True %}
+                                    <option selected value="True">Si</option>
+                                    <option value="False">No</option>
+                                    {%else%}
+                                    <option  value="True">Si</option>
+                                    <option selected value="False">No</option>
+                                    {%endif%}
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 d-flex justify-content-between">
+
+                            <div class="col-5 d-none depende-container">
+                                <label for="depende" class="form-label">Depende de Otro Campo</label>
+                          
+                                <select name="depende" id="depende" class="form-control" >
+
+                                    <option value="0"></option>
+                                {% if Camposs %}
+                                    {% for Campos in Camposs%}
+
+                                    {% if Campos[0]==datoC[11] %}
+                                    <option selected value="{{Campos[0]}}">{{Campos[1]}} - {{Campos[3]}} - {{Campos[5]}} - {{Campos[7]}}</option>
+                                    {% else %}
+                                    <option value="{{Campos[0]}}">{{Campos[1]}} - {{Campos[3]}} - {{Campos[5]}} - {{Campos[7]}}</option>
+                                    {%endif%}
+
+                                    {%endfor%}
+                                {%else%}
+                                {%endif%}
+
+                                </select>
+                            </div>
+
+                            <div class="col-5 d-none valores-container">
+                                <label class="form-label" for="valores">Valores</label>
+                                <textarea class="form-control" name="valores" id="valores" >{{datoC[12]}}</textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Estados en los que va a aparecer este campo</label>
+                            <select multiple="multiple" name="estados" id="estados" class="form-control multiple-select">
+                                
+
+
+                                {% if Eposts %}
+                                {% for Epost in Eposts -%}
+        
+                                    {% set break=namespace(break1=False) %}
+                                    
+                                    {% if ecs %}
+                                    {% for ec in ecs -%}
+        
+        
+                                        
+                                        
+        
+                                        {% if ec[0]==Epost[0] and ec[2]==datoC[0]  %}
+                                            <option selected value="{{Epost[0]}}">{{Epost[1]}} - {{Epost[3]}} - {{Epost[5]}} - {{Epost[7]}}</option>
+                                            {% set break.break1=True %}
+                                        {% endif %}
+        
+                                        
+        
+        
+                                        
+                                        
+        
+                                    {% endfor -%}
+                                    {% else %}
+                                    {% endif %}
+                                    
+        
+                                    {% if break.break1==False %}
+                                    <option value="{{Epost[0]}}">{{Epost[1]}} - {{Epost[3]}} - {{Epost[5]}} - {{Epost[7]}}</option>
+                                    {% endif %}
+                                    
+        
+                                {% endfor -%}
+                                {% else %}
+                                {% endif %}
+
+
+
+
+
+
+
+
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar" class="form-label">Pueden acceder a este campo [edición]</label>
+                            <select multiple="multiple" name="editar" id="editar" class="form-control multiple-select">
+                                
+
+
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+
+                                {% set break=namespace(break1=False) %}
+
+
+                                {% if pgcs %}
+                                {% for pgc in pgcs -%}
+                                
+                                {% if pgc[4]==1 and pgc[0]==datoC[0] and Gpost[0]==pgc[2]  %}
+                                <option selected value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                    {% set break.break1=True %}
+                                {%else%}
+                                {% endif %}
+                                
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+
+                                {% if break.break1==False %}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endif %}
+
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+
+
+                    
+
+
+
+
+
+
+
+                            </select>                        
+                        </div>
+                        
+                        
+                        <div class="mb-3">
+                            <label for="ver" class="form-label">Pueden acceder a este campo [solo visualización]</label>
+                            <select multiple="multiple" name="ver" id="ver" class="form-control multiple-select">
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+
+                                {% set break=namespace(break1=False) %}
+
+
+                                {% if pgcs %}
+                                {% for pgc in pgcs -%}
+                                
+                                {% if pgc[4]==2 and pgc[0]==datoC[0] and Gpost[0]==pgc[2]  %}
+                                <option selected value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                    {% set break.break1=True %}
+                                {%else%}
+                                {% endif %}
+                                
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+
+                                {% if break.break1==False %}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endif %}
+
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                            </select>
+                        </div>
+                        
+                        
+                        <div class="d-flex justify-content-end ">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary mx-2">Guardar</button>
+                        </div>
+                    
+                      </form>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+                
+        <!-- End::app-content -->
+        <div class="modal fade" id="modalCrear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Crear Campos</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/campos" method="post">
+                        
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div class="col-7">
+                                <label for="nombre" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="col-4">
+                                <label class="form-label" for="orden">Orden</label>
+                                <input class="form-control" type="number" name="orden" id="orden" required>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div class="col-6">
+                                <label class="form-label" for="bloque">Bloque de Campo [vacío=cabecera]</label>
+                                <select class="form-control" name="bloque" id="bloque" required>
+
+                                    
+                                    
+                                {% if BCSposts %}
+                                    
+                                    {% for BCSpost in BCSposts%}
+                                        <option value="{{BCSpost[0]}}">{{BCSpost[1]}} - {{BCSpost[4]}} - {{BCSpost[6]}}</option>
+                                    {%endfor%}
+                                {%else%}
+                                {%endif%}
+
+
+
+                                </select>
+                            </div>
+                            <div class="col-5">
+                                <label class="form-label" for="type">Tipo de campo</label>
+                                <select class="form-control" name="type" id="type" required>
+                                    <option value="1">Texto Corto</option>
+                                    <option value="2">Texto Largo</option>
+                                    <option value="3">Selección</option>
+                                    <option value="4">Fecha</option>
+                                    <option value="5">Fecha y Hora</option>
+                                    <option value="6">Numérico</option>
+                                    <option value="7">Archivo</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="mb-3 d-flex justify-content-between">
+
+                            <div class="col-5">
+                                <label for="ancho" class="form-label">Ancho de Campo</label>
+                          
+                                <select name="ancho" id="ancho" class="form-control" required>
+                                    <option value="col-md-1">01/12 | 08.33%</option>
+                                    <option value="col-md-2">02/12 | 16.66%</option>
+                                    <option value="col-md-3">03/12 | 25.00%</option>
+                                    <option value="col-md-4">04/12 | 33.33%</option>
+                                    <option value="col-md-6">06/12 | 50.00%</option>
+                                    <option value="col-md-8">08/12 | 66.66%</option>
+                                    <option value="col-md-9">09/12 | 75.00%</option>
+                                    <option value="col-md-10">10/12 | 83.33%</option>
+                                    <option value="col-md-12">12/12 | 100.00%</option>
+                                </select>
+                            </div>
+
+                            <div class="col-5">
+                                <label class="form-label" for="obligatorio">Es obligatorio</label>
+                                <select class="form-control" name="obligatorio" id="obligatorio" required>
+                                    <option value="True">Si</option>
+                                    <option value="False">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 d-flex justify-content-between">
+
+                            <div class="col-5 d-none depende-container">
+                                <label for="depende" class="form-label">Depende de Otro Campo</label>
+                          
+                                <select name="depende" id="depende" class="form-control" >
+
+                                    <option value="0"></option>
+                                {% if Camposs %}
+                                    {% for Campos in Camposs%}
+                                    <option value="{{Campos[0]}}">{{Campos[1]}} - {{Campos[3]}} - {{Campos[5]}} - {{Campos[7]}}</option>
+                                    {%endfor%}
+                                {%else%}
+                                {%endif%}
+
+                                </select>
+                            </div>
+
+                            <div class="col-5 d-none valores-container">
+                                <label class="form-label" for="valores">Valores</label>
+                                <textarea class="form-control" name="valores" id="valores" ></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Estados en los que va a aparecer este campo</label>
+                            <select multiple="multiple" name="estados" id="estados" class="form-control multiple-select">
+                                {% if Eposts %}
+                                {% for Epost in Eposts -%}
+                                <option value="{{Epost[0]}}">{{Epost[1]}} - {{Epost[3]}} - {{Epost[5]}} - {{Epost[7]}}</option>
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar" class="form-label">Pueden acceder a este campo [edición]</label>
+                            <select multiple="multiple" name="editar" id="editar" class="form-control multiple-select">
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                            </select>                        
+                        </div>
+                        
+                        
+                        <div class="mb-3">
+                            <label for="ver" class="form-label">Pueden acceder a este campo [solo visualización]</label>
+                            <select multiple="multiple" name="ver" id="ver" class="form-control multiple-select">
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                            </select>
+                        </div>
+                        
+                        
+                        <div class="d-flex justify-content-end ">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary mx-2">Guardar</button>
+                        </div>
+                    
+                      </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Footer Start -->
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <div class="container">
+                <span class="text-muted"> Copyright © <span id="year"></span> <a
+                        href="javascript:void(0);" class="text-dark fw-semibold">LanTech</a>.
+                    Designed with <span class="bi bi-heart-fill text-danger"></span> by <a href="https://www.lantechperu.com">
+                        <span class="fw-semibold text-primary text-decoration-underline">LanTech S.A.C.</span>
+                    </a> All
+                    rights
+                    reserved
+                </span>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+    </div>
+
+
+    <div class="modal fade" id="modalPassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Cambiar Contraseña</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+                <form action="/change-password" method="post" class="row gy-4">
+
+                    <div class="col-md-6 col-sm-12">
+                        <p class="mb-2 text-muted">Antigua Contraseña</p>
+                        <input type="password" class="form-control" id="old-password" name="old-password">
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <p class="mb-2 text-muted">Nueva Contraseña</p>
+                        <input type="password" class="form-control" id="new-password" name="new-password" >
+                    </div>
+                    
+                    <div class="col-sm-12 d-flex justify-content-center">
+                        <input type="submit" class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mx-auto btn btn-primary" value="Cambiar Contraseña"></input>
+                    </div>
+                
+
+                </form>
+
+            </div>
+            <div class="modal-footer">
+            
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    
+    <div class="scrollToTop">
+        <span class="arrow"><i class="ri-arrow-up-s-fill fs-20"></i></span>
+    </div>
+    <div id="responsive-overlay"></div>
+
+    <!-- Popper JS -->
+    <script src="../static/libs/@popperjs/core/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Defaultmenu JS -->
+    <script src="../static/js/defaultmenu.min.js"></script>
+
+    <!-- Node Waves JS-->
+    <script src="../static/libs/node-waves/waves.min.js"></script>
+
+    <!-- Sticky JS -->
+    <script src="../static/js/sticky.js"></script>
+
+    <!-- Simplebar JS -->
+    <script src="../static/libs/simplebar/simplebar.min.js"></script>
+    <script src="../static/js/simplebar.js"></script>
+
+    <!-- Color Picker JS -->
+    <script src="../static/libs/@simonwep/pickr/pickr.es5.min.js"></script>
+
+
+    <!-- JSVector Maps JS -->
+    <script src="../static/libs/jsvectormap/js/jsvectormap.min.js"></script>
+
+    <!-- JSVector Maps MapsJS -->
+    <script src="../static/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!-- Apex Charts JS -->
+    <script src="../static/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Chartjs Chart JS -->
+    <script src="../static/libs/chart.js/chart.min.js"></script>
+
+    <!-- CRM-Dashboard -->
+    <script src="../static/js/crm-dashboard.js"></script>
+
+    
+    <!-- Custom-Switcher JS -->
+    <script src="../static/js/custom-switcher.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../static/js/custom.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.5/dist/js/select2.min.js"></script>
+
+    <script src="../static/js/table2excel.js"></script>
+
+    <script>
+        let typee = document.querySelectorAll('#type')
+        let valores = document.querySelectorAll('.valores-container')
+        let depende = document.querySelectorAll('.depende-container')
+
+
+        $(document).ready(function() {
+            
+            $('.multiple-select').select2();
+
+
+
+
+            
+        });
+
+
+        
+
+        for (let i = 0; i < typee.length; i++) {
+        
+            typee[i].onchange=function(){
+            if (typee[i].value==3) {
+                valores[i].classList.remove("d-none");
+                depende[i].classList.remove("d-none");
+            }
+            else{
+                valores[i].classList.add("d-none");
+                depende[i].classList.add("d-none");
+            }
+            }
+
+            
+            if (typee[i].value==3) {
+                console.log("remueve");
+                valores[i].classList.remove("d-none");
+                depende[i].classList.remove("d-none");
+            }
+            
+            
+        }
+
+        let boton_exportar = document.querySelector(".export-excel")
+
+        boton_exportar.addEventListener('click',function(){
+            var table2excel = new Table2Excel();
+            table2excel.export(document.querySelector(".table-download"));
+        })
+
+
+
+    </script>
+
+
+</body>
+
+</html>

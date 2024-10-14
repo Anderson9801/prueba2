@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-vertical-style="overlay" data-theme-mode="light" data-header-styles="light" data-menu-styles="light" data-toggled="close">
+
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Create User Admin </title>
+    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+    <meta name="Author" content="Spruko Technologies Private Limited">
+	<meta name="keywords" content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../static/images/brand-logos/favicon.ico" type="image/x-icon">
+
+    <!-- Main Theme Js -->
+    <script src="../static/js/authentication-main.js"></script>
+
+    <!-- Bootstrap Css -->
+    <link id="style" href="../static/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+
+    <!-- Style Css -->
+    <link href="../static/css/styles.min.css" rel="stylesheet" >
+
+    <!-- Icons Css -->
+    <link href="../static/css/icons.min.css" rel="stylesheet" >
+
+
+</head>
+
+<body>
+
+   
+
+    <div class="container-lg">
+        <div class="row justify-content-center align-items-center authentication authentication-basic h-100">
+            <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-6 col-sm-8 col-12">
+                
+                <div class="card custom-card">
+                    <div class="card-body p-5">
+                        <p class="h5 fw-semibold mb-2 text-center">Sign Up</p>
+                        <p class="mb-4 text-muted op-7 fw-normal text-center">Bienvenido, por favor cree el usuario admin.</p>
+
+                        <div class="row gy-3">
+                            <form action="" class="row gy-3" action="/register" method="post">
+                                <div class="col-xl-12" >
+                                    <label for="nombre-empresa" class="form-label text-default">Nombre de Empresa</label>
+                                    <input type="text" name="nombre-empresa" class="form-control form-control-lg" id="nombre-empresa" placeholder="M&G Telecomunicaciones">
+                                </div>
+                                <div class="col-xl-12" >
+                                    <label for="contacto" class="form-label text-default">Contacto</label>
+                                    <input type="text" name="contacto" class="form-control form-control-lg" id="contacto" placeholder="Jheyson / José">
+                                </div>
+                                <div class="col-xl-12" >
+                                    <label for="subfijo" class="form-label text-default">Subfijo</label>
+                                    <input type="text" name="subfijo" class="form-control form-control-lg" id="subfijo" placeholder="@mygtelecomunicaciones.com">
+                                </div>
+                                <div class="col-xl-12" >
+                                    <label for="nombre-grupo" class="form-label text-default">Nombre de Grupo de Administradores (Todos los permisos)</label>
+                                    <input type="text" name="nombre-grupo" class="form-control form-control-lg" id="nombre-grupo" placeholder="Ej: Administradores">
+                                </div>
+                                <div class="col-xl-12" >
+                                    <label for="nombre" class="form-label text-default">Nombre de Usuario</label>
+                                    <input type="text" name="nombre" class="form-control form-control-lg" id="nombre" placeholder="Ej: Juan Perez">
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="user" class="form-label text-default">Usuario</label>
+                                    <input type="text" name="user" class="form-control form-control-lg" id="user" placeholder="EJ: example@example.com (Sin el subfijo)">
+                                </div>
+                                <div class="col-xl-12">
+                                    <label for="password" class="form-label text-default">Password</label>
+                                    <div class="input-group">
+                                        <input type="password" name="password" class="form-control form-control-lg" id="password" placeholder="*********">
+                                        <button class="btn btn-light" onclick="createpassword('password',this)" type="button" id="button-addon2"><i class="ri-eye-off-line align-middle"></i></button>
+                                    </div>
+                                </div>
+                                <div class="col-xl-12 mb-2">
+                                    
+                                    <br>
+                                </div>
+                                <div class="col-xl-12 d-grid mt-2">
+                                    <input type="submit" class="btn btn-lg btn-primary" value="Create Account"></input>
+                                </div>
+                            </form>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Custom-Switcher JS -->
+    <script src="../static/js/custom-switcher.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Show Password JS -->
+    <script src="../static/js/show-password.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light" data-menu-styles="dark" data-toggled="close">
+
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Acceso al Sistema </title>
+    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+    <meta name="Author" content="Spruko Technologies Private Limited">
+	<meta name="keywords" content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../static/images/brand-logos/favicon.ico" type="image/x-icon">
+    
+    <!-- Choices JS -->
+    <script src="../static/libs/choices.js/public/static/scripts/choices.min.js"></script>
+
+    <!-- Main Theme Js -->
+    <script src="../static/js/main.js"></script>
+    
+    <!-- Bootstrap Css -->
+    <link id="style" href="../static/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+
+    <!-- Style Css -->
+    <link href="../static/css/styles.min.css" rel="stylesheet" >
+
+    <!-- Icons Css -->
+    <link href="../static/css/icons.css" rel="stylesheet" >
+
+    <!-- Node Waves Css -->
+    <link href="../static/libs/node-waves/waves.min.css" rel="stylesheet" > 
+
+    <!-- Simplebar Css -->
+    <link href="../static/libs/simplebar/simplebar.min.css" rel="stylesheet" >
+    
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../static/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/libs/@simonwep/pickr/themes/nano.min.css">
+
+    <!-- Choices Css -->
+    <link rel="stylesheet" href="../static/libs/choices.js/public/static/styles/choices.min.css">
+
+
+<link rel="stylesheet" href="../static/libs/jsvectormap/css/jsvectormap.min.css">
+
+<link rel="stylesheet" href="../static/libs/swiper/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+    <!-- Start Switcher -->
+    
+    <!-- End Switcher -->
+
+    <div class="page">
+         <!-- app-header -->
+         <header class="app-header">
+
+            <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid">
+
+                <!-- Start::header-content-left -->
+                <div class="header-content-left">
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="index.html" class="header-logo">
+                                <img src="../static/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="../static/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                                <img src="../static/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                                <img src="../static/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link -->
+                        <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
+                        <!-- End::header-link -->
+                    </div>
+                    <!-- End::header-element -->
+
+                </div>
+                <!-- End::header-content-left -->
+
+                <!-- Start::header-content-right -->
+                <div class="header-content-right">
+                    
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link|dropdown-toggle -->
+                        <a href="#" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            <div class="d-flex align-items-center">
+                                <div class="me-sm-2 me-0">
+                                    <img src="../static/images/faces/perfil.png" alt="img" width="32" height="32" class="rounded-circle">
+                                </div>
+                                {% if username %}
+                                    <div class="d-sm-block d-none">
+                                        <p class="fw-semibold mb-0 lh-1">{{username[0]}}</p>
+                                        <span class="op-7 fw-normal d-block fs-11">{{username[1]}}</span>
+                                    </div>
+                                {%else%}
+                                    
+                                {% endif %}
+                            </div>
+                        </a>
+                        <!-- End::header-link|dropdown-toggle -->
+                        <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden dropdown-menu-end" aria-labelledby="mainHeaderProfile">
+                            <li><a class="dropdown-item d-flex" href="/change-password"><i class="ri-lock-password-line"></i>&nbsp;Contraseña</a></li>
+                        {% if config_empresa == True %}
+                            <li><a class="dropdown-item d-flex" href="/config-general"><i class="ri-tools-fill"></i>&nbsp;Config. General</a></li>
+                        {%else%}
+                        {% endif %}    
+                            <li><a class="dropdown-item d-flex border-block-end" href="/logout"><i class="ri-logout-box-r-line"></i>&nbsp;Cerrar Sesión</a></li>
+                        </ul>
+                    </div>  
+                    
+
+                </div>
+                
+
+            </div>
+            
+
+        </header>
+        <!-- /app-header -->
+        <!-- Start::app-sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar">
+
+            <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header">
+                <a href="/empresa" class="header-logo">
+                    <img src="../static/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    <img src="../static/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                    <img src="../static/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                    <img src="../static/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                </a>
+            </div>
+            <!-- End::main-sidebar-header -->
+
+            <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll">
+
+                <!-- Start::nav -->
+                <nav class="main-menu-container nav nav-pills flex-column sub-open">
+                    <div class="slide-left" id="slide-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path> </svg>
+                    </div>
+                    <ul class="main-menu">
+                        <!-- Start::slide__category -->
+                        <!-- End::slide__category -->
+
+                        <!-- Start::slide -->
+                        <li class="slide has-sub">
+                            <a href="/empresa" class="side-menu__item">
+                                <i class="bx bx-home side-menu__icon"></i>
+                                <span class="side-menu__label">Inicio</span>
+                                
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Inicio</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <!-- End::slide -->
+
+
+
+
+
+                    
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-cog side-menu__icon'></i>
+                                <span class="side-menu__label">Config. Empresa</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Dashboards</a>
+                                </li>
+                            {% if config_empresa == True %}
+                                <li class="slide">
+                                    <a href="/config-general" class="side-menu__item">Config. General</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+                                <li class="slide">
+                                    <a href="/change-password" class="side-menu__item">Cambiar Contraseña</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+
+                    {% if config_asistencia == True %}
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-hourglass side-menu__icon'></i>
+                                <span class="side-menu__label">Config. Asistencia</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Config. Asistencia</a>
+                                </li>
+                            {% if horarios == True %}
+                                <li class="slide">
+                                    <a href="/horarios" class="side-menu__item">Horarios</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+
+                            {% if sedes == True %}
+                                <li class="slide">
+                                    <a href="/sedes" class="side-menu__item">Sedes</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+                            </ul>
+                        </li>
+                    {%else%}
+                    {% endif %}
+                    
+                    {% if admin_usuarios == True %}
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-group side-menu__icon'></i>
+                                <span class="side-menu__label">Admin. Usuarios</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Admin. Usuarios</a>
+                                </li>
+                            {% if grupos == True %}
+                                <li class="slide">
+                                    <a href="/grupos-usuarios" class="side-menu__item">Grupos de Usuarios</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+
+                            {% if usuarios == True %}
+                                <li class="slide">
+                                    <a href="/usuarios" class="side-menu__item">Usuarios</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+                            
+
+                            </ul>
+                        </li>
+                    {%else%}
+                    {% endif %}
+
+                    {% if reportes == True %}
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-pie-chart-alt-2 side-menu__icon' ></i>
+                                <span class="side-menu__label">Reportes</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Reportes</a>
+                                </li>
+                            {% if asistencia == True %}
+                                <li class="slide">
+                                    <a href="/asistencia" class="side-menu__item">Asistencia</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+                            
+                            {% if accesos == True %}
+                                <li class="slide">
+                                    <a href="/accesos" class="side-menu__item">Acceso al Sistema</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+
+                            {% if movimientos == True %}
+                                <li class="slide">
+                                    <a href="/movimientos-usuarios" class="side-menu__item">Movimientos por Usuario</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+                            </ul>
+                        </li>
+                    {%else%}
+                    {% endif %}
+
+                        <!-- End::slide -->
+                    </ul>
+                    <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path> </svg></div>
+                </nav>
+                <!-- End::nav -->
+
+            </div>
+            <!-- End::main-sidebar -->
+
+        </aside>
+        <!-- End::app-sidebar -->
+        <br>
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between">
+                                <div class="card-title col-sm-2 col-12">
+                                    Acceso al Sistema
+                                </div>
+
+                                <div class="row col-12 col-sm-9 d-flex justify-content-around">
+                                    <div class="col-sm-3 col-12">
+                                        <label for="inicio" class="form-label">Fecha Inicio</label>
+                                                
+                                            {% if inicio_select %}
+                                            <input value="{{inicio_select}}" class="form-control selectInicio" type="datetime-local" name="inicio" id="inicio">
+                                            {%else%}
+                                            <input class="form-control selectInicio" type="datetime-local" name="inicio" id="inicio">
+                                            {% endif %}
+
+                                        
+                                    </div>
+                                    <div class="col-sm-3 col-12">
+                                        <label class="form-label" for="fin">Fecha Fin</label>
+
+                                            {% if fin_select %}
+                                            <input value="{{fin_select}}" class="form-control selectFin" type="datetime-local" name="fin" id="fin">
+                                            {%else%}
+                                            <input class="form-control selectFin" type="datetime-local" name="fin" id="fin">
+                                            {% endif %}
+
+
+
+                                        
+                                    </div>
+                                    <div class="col-sm-3 col-12">
+                                        <label class="form-label" for="personal">Personal</label>
+                                        <select class="form-control selectPersonal"  name="personal" id="personal">
+                                            <option value=""></option>
+                                            {% if personal %}
+                                            {% for persona in personal -%}
+
+                                                {% if persona[0]==personal_select %}
+                                                <option selected value="{{persona[0]}}">{{persona[1]}}</option>
+                                                {%else%}
+                                                <option value="{{persona[0]}}">{{persona[1]}}</option>
+                                                {% endif %}
+
+                                            {% endfor -%}
+                                            {%else%}                                
+                                            {% endif %}
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table text-nowrap">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                
+                                                <th scope="col">Personal</th>
+                                                <th scope="col">Usuario</th>
+                                                <th scope="col">IP</th>
+                                                <th scope="col">Tipo de Acceso</th>
+                                                <th scope="col">Fecha y Hora</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% if data_accesos %}
+                                            {% for data_acceso in data_accesos -%}
+                                            <tr>
+                                                
+                                                <th scope="row">{{data_acceso[5]}}</th>
+                                                <td>{{data_acceso[6]}}</td>
+                                                <td>{{data_acceso[4]}}</td>
+                                                <td>{{data_acceso[2]}}</td>
+                                                <td>{{data_acceso[3]}}</td>
+                                            </tr>
+                                            {% endfor -%}
+                                            {%else%}                                
+                                            {% endif %}
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                
+        
+        
+        <!-- Footer Start -->
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <div class="container">
+                <span class="text-muted"> Copyright © <span id="year"></span> <a
+                        href="javascript:void(0);" class="text-dark fw-semibold">LanTech</a>.
+                    Designed with <span class="bi bi-heart-fill text-danger"></span> by <a href="https://www.lantechperu.com">
+                        <span class="fw-semibold text-primary text-decoration-underline">LanTech S.A.C.</span>
+                    </a> All
+                    rights
+                    reserved
+                </span>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+    </div>
+
+    
+    <div class="scrollToTop">
+        <span class="arrow"><i class="ri-arrow-up-s-fill fs-20"></i></span>
+    </div>
+    <div id="responsive-overlay"></div>
+
+    <!-- Popper JS -->
+    <script src="../static/libs/@popperjs/core/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Defaultmenu JS -->
+    <script src="../static/js/defaultmenu.min.js"></script>
+
+    <!-- Node Waves JS-->
+    <script src="../static/libs/node-waves/waves.min.js"></script>
+
+    <!-- Sticky JS -->
+    <script src="../static/js/sticky.js"></script>
+
+    <!-- Simplebar JS -->
+    <script src="../static/libs/simplebar/simplebar.min.js"></script>
+    <script src="../static/js/simplebar.js"></script>
+
+    <!-- Color Picker JS -->
+    <script src="../static/libs/@simonwep/pickr/pickr.es5.min.js"></script>
+
+
+    <!-- JSVector Maps JS -->
+    <script src="../static/libs/jsvectormap/js/jsvectormap.min.js"></script>
+
+    <!-- JSVector Maps MapsJS -->
+    <script src="../static/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!-- Apex Charts JS -->
+    <script src="../static/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Chartjs Chart JS -->
+    <script src="../static/libs/chart.js/chart.min.js"></script>
+
+    <!-- CRM-Dashboard -->
+    <script src="../static/js/crm-dashboard.js"></script>
+
+    
+    <!-- Custom-Switcher JS -->
+    <script src="../static/js/custom-switcher.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../static/js/custom.js"></script>
+
+    <script>
+
+        let select_personal = document.querySelector('.selectPersonal')
+        let select_inicio = document.querySelector('.selectInicio')
+        let select_fin = document.querySelector('.selectFin')
+
+        select_personal.onchange = function(){
+            console.log(select_personal.value);
+            console.log(select_inicio.value);
+            console.log(select_fin.value);
+            if (select_inicio.value=="" || select_fin.value==""){
+                console.log("nada");
+            }
+            else{
+                window.location.href = `/accesos/query?personal=${select_personal.value}&inicio=${select_inicio.value}&fin=${select_fin.value}`;
+            }
+            
+        }
+
+        select_inicio.onchange = function(){
+            select_fin.min=select_inicio.value
+            console.log(select_personal.value);
+            console.log(select_inicio.value);
+            console.log(select_fin.value);
+            window.location.href = `/accesos/query?personal=${select_personal.value}&inicio=${select_inicio.value}&fin=${select_fin.value}`;
+            //window.location.href = "/accesos/query";
+        }
+
+        select_fin.onchange = function(){
+            select_inicio.max=select_fin.value
+            console.log(select_personal.value);
+            console.log(select_inicio.value);
+            console.log(select_fin.value);
+            window.location.href = `/accesos/query?personal=${select_personal.value}&inicio=${select_inicio.value}&fin=${select_fin.value}`;
+            //window.location.href = "/accesos/query";
+        } 
+
+
+
+    </script>
+
+</body>
+
+</html>

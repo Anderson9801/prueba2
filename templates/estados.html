@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light" data-menu-styles="dark" data-toggled="close">
+
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Estados </title>
+    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+    <meta name="Author" content="Spruko Technologies Private Limited">
+	<meta name="keywords" content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../static/images/brand-logos/favicon.ico" type="image/x-icon">
+    
+    <!-- Choices JS -->
+    <script src="../static/libs/choices.js/public/static/scripts/choices.min.js"></script>
+
+    <!-- Main Theme Js -->
+    <script src="../static/js/main.js"></script>
+    
+    <!-- Bootstrap Css -->
+    <link id="style" href="../static/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+
+    <!-- Style Css -->
+    <link href="../static/css/styles.min.css" rel="stylesheet" >
+
+    <!-- Icons Css -->
+    <link href="../static/css/icons.css" rel="stylesheet" >
+
+    <!-- Node Waves Css -->
+    <link href="../static/libs/node-waves/waves.min.css" rel="stylesheet" > 
+
+    <!-- Simplebar Css -->
+    <link href="../static/libs/simplebar/simplebar.min.css" rel="stylesheet" >
+    
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../static/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/libs/@simonwep/pickr/themes/nano.min.css">
+
+    <!-- Choices Css -->
+    <link rel="stylesheet" href="../static/libs/choices.js/public/static/styles/choices.min.css">
+
+
+    <link rel="stylesheet" href="../static/libs/jsvectormap/css/jsvectormap.min.css">
+
+    <link rel="stylesheet" href="../static/libs/swiper/swiper-bundle.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.0.5/dist/css/select2.min.css" rel="stylesheet">
+    
+      
+</head>
+
+<body>
+
+    <!-- Start Switcher -->
+    
+    <!-- End Switcher -->
+
+    <div class="page">
+         <!-- app-header -->
+         <header class="app-header">
+
+            <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid">
+
+                <!-- Start::header-content-left -->
+                <div class="header-content-left">
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="index.html" class="header-logo">
+                                <img src="../static/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="../static/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                                <img src="../static/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                                <img src="../static/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link -->
+                        <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
+                        <!-- End::header-link -->
+                    </div>
+                    <!-- End::header-element -->
+
+                </div>
+                <!-- End::header-content-left -->
+
+                <!-- Start::header-content-right -->
+                <div class="header-content-right">
+                    
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link|dropdown-toggle -->
+                        <a href="#" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            <div class="d-flex align-items-center">
+                                <div class="me-sm-2 me-0">
+                                    <img src="../static/images/faces/perfil.png" alt="img" width="32" height="32" class="rounded-circle">
+                                </div>
+                                {% if username %}
+                                    <div class="d-sm-block d-none">
+                                        <p class="fw-semibold mb-0 lh-1">{{username[0]}}</p>
+                                        <span class="op-7 fw-normal d-block fs-11">{{username[1]}}</span>
+                                    </div>
+                                {%else%}
+                                {% endif %}
+                            </div>
+                        </a>
+                        <!-- End::header-link|dropdown-toggle -->
+                        <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden dropdown-menu-end" aria-labelledby="mainHeaderProfile">
+                            <li><button data-bs-toggle="modal" data-bs-target="#modalPassword"  class="dropdown-item d-flex" href=""><i class="ri-lock-password-line"></i>&nbsp;Contraseña</button></li>
+
+                            {% if config_empresa == True %}
+                            <li><a href="/config-general" class="dropdown-item d-flex" href=""><i class="ri-tools-fill"></i>&nbsp;Config. Empresa</a></li>
+                            {%else%}
+                            {% endif %}
+
+                            <li><a href="/logout" class="dropdown-item d-flex border-block-end" href=""><i class="ri-logout-box-r-line"></i>&nbsp;Cerrar Sesión</a></li>
+                        </ul>
+                    </div>  
+                    
+
+                </div>
+                
+
+            </div>
+            
+
+        </header>
+
+
+        <aside class="app-sidebar sticky" id="sidebar">
+
+            <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header">
+                <a href="/empresa-ventas" class="header-logo">
+                    <img src="../static/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    <img src="../static/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                    <img src="../static/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                    <img src="../static/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                </a>
+            </div>
+            <!-- End::main-sidebar-header -->
+
+            <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll">
+
+                <!-- Start::nav -->
+                <nav class="main-menu-container nav nav-pills flex-column sub-open">
+                    <div class="slide-left" id="slide-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path> </svg>
+                    </div>
+                    <ul class="main-menu">
+                        <!-- Start::slide__category -->
+                        <!-- End::slide__category -->
+
+                        <!-- Start::slide -->
+                        <li class="slide has-sub">
+                            <a href="/empresa-ventas" class="side-menu__item">
+                                <i class="bx bx-home side-menu__icon"></i>
+                                <span class="side-menu__label">Inicio</span>
+                                
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Inicio</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <!-- End::slide -->
+
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bx-diamond side-menu__icon'></i>
+                                <span class="side-menu__label">Gestión de Ventas</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Gestión de Ventas</a>
+                                </li>
+                                <li class="slide has-sub">
+                                    <a href="javascript:void(0);" class="side-menu__item">Sede 1
+                                        <i class="bx bx-chevron-right side-menu__angle"></i></a>
+                                        <ul class="slide-menu child2">
+                                            <li class="slide">
+                                                <a href="ventas.html" class="side-menu__item">Claro Hogar</a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="ventas.html" class="side-menu__item">Claro Móvil</a>
+                                            </li>
+                                            
+                                        </ul>
+                                </li>
+                                <li class="slide has-sub">
+                                    <a href="javascript:void(0);" class="side-menu__item">Sede 2
+                                        <i class="bx bx-chevron-right side-menu__angle"></i></a>
+                                        <ul class="slide-menu child2">
+                                            <li class="slide">
+                                                <a href="ventas.html" class="side-menu__item">Claro Hogar</a>
+                                            </li>
+                                            <li class="slide">
+                                                <a href="ventas.html" class="side-menu__item">Claro Móvil</a>
+                                            </li>
+                                            
+                                        </ul>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="slide has-sub">
+                            <a href="/recordatorios" class="side-menu__item">
+                                <i class='bx bxs-calendar side-menu__icon'></i>
+                                <span class="side-menu__label">Recordatorios</span>
+                                
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Recordatorios</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+
+                        {% if config_campanas == True %}
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-cog side-menu__icon'></i>
+                                <span class="side-menu__label">Config. Campañas</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Config. Campañas</a>
+                                </li>
+
+                                {% if campanas == True %}
+                                <li class="slide">
+                                    <a href="/campanas" class="side-menu__item">Canpañas</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+                                {% if pestanas == True %}
+                                <li class="slide">
+                                    <a href="/pestanas" class="side-menu__item">Pestañas de estados</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+                                {% if estados == True %}
+                                <li class="slide">
+                                    <a href="/estados" class="side-menu__item">Estados</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+                                {% if bloques == True %}
+                                <li class="slide">
+                                    <a href="/bloques" class="side-menu__item">Bloques de Campos</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+                                {% if campos == True %}
+                                <li class="slide">
+                                    <a href="/campos" class="side-menu__item">Campos</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+
+
+
+                            </ul>
+                        </li>
+                        {%else%}
+                        {% endif %}
+                    
+
+
+
+
+
+                        {% if reportes_ventas == True %}
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-pie-chart-alt-2 side-menu__icon' ></i>
+                                <span class="side-menu__label">Reportes</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Reportes</a>
+                                </li>
+
+
+
+
+
+                                {% if reportes1 == True %}
+                                <li class="slide">
+                                    <a href="/estados-ventas" class="side-menu__item">Estados de Venta</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+                    
+
+
+                                {% if reportes2 == True %}
+                                <li class="slide">
+                                    <a href="/ranking" class="side-menu__item">Ranking de Vendedores</a>
+                                </li>
+                                {%else%}
+                                {% endif %}
+
+                        
+                            </ul>
+                        </li>
+                        {%else%}
+                        {% endif %}
+                    
+
+
+                        <!-- End::slide -->
+                    </ul>
+                    <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path> </svg></div>
+                </nav>
+                <!-- End::nav -->
+
+            </div>
+            <!-- End::main-sidebar -->
+
+        </aside>
+        <!-- End::app-sidebar -->
+        <br>
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between">
+                                <div class="card-title">
+                                    Estados
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-success btn-wave" data-bs-toggle="modal" data-bs-target="#modalCrear"><i class="bi bi-plus-lg"></i> Crear Nuevo</button>
+                                    <button type="button" class="btn btn-success btn-wave export-excel mx-2" style="background-color: #6610f2 !important; border-color: #6610f2 !important;"><i class="bi bi-file-earmark-spreadsheet"></i> Exportar</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table text-nowrap table-download">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Pestaña</th>
+                                                <th scope="col">Orden</th>
+                                                <th scope="col">Campaña</th>
+                                                <th scope="col">Sede</th>
+                                                <th scope="col">Pueden Crear</th>
+                                                <th scope="col">Pueden Editar</th>
+                                                <th scope="col">Pueden Ver</th>
+                                                <th scope="col">Pueden Eliminar</th>
+                                                <th scope="col">Pueden Ver Historial</th>
+                                                
+                                                
+                                                <th scope="col">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            {% if datosE %}
+                                            {% for datoE in datosE -%}
+                                            
+                                            <tr style="background-color: {{datoE[2]}};">
+                                                <th scope="row">{{datoE[1]}}</th>
+                                                <td>{{datoE[6]}}</td>
+                                                <td>{{datoE[4]}}</td>
+                                                <td>{{datoE[8]}}</td>
+                                                <td>{{datoE[10]}}</td>
+                                                
+                                                <td>
+                                                {% if pges %}
+                                                {% for pge in pges -%}
+                                                
+                                                {% if pge[2]==1 and pge[0]==datoE[0]  %}
+                                                {{pge[4]}}<br>
+                                                {%else%}
+                                                {% endif %}
+                                                
+                                                {% endfor -%}
+                                                {%else%}                             
+                                                {% endif %}
+                                                </td>
+
+                                                <td>
+                                                {% if pges %}
+                                                {% for pge in pges -%}
+                                                
+                                                {% if pge[2]==2 and pge[0]==datoE[0]  %}
+                                                {{pge[4]}}<br>
+                                                {%else%}
+                                                {% endif %}
+                                                
+                                                {% endfor -%}
+                                                {%else%}                             
+                                                {% endif %}
+                                                </td>
+
+                                                <td>
+                                                {% if pges %}
+                                                {% for pge in pges -%}
+                                                
+                                                {% if pge[2]==3 and pge[0]==datoE[0]  %}
+                                                {{pge[4]}}<br>
+                                                {%else%}
+                                                {% endif %}
+                                                
+                                                {% endfor -%}
+                                                {%else%}                             
+                                                {% endif %}
+                                                </td>
+
+                                                <td>
+                                                {% if pges %}
+                                                {% for pge in pges -%}
+                                                
+                                                {% if pge[2]==4 and pge[0]==datoE[0]  %}
+                                                {{pge[4]}}<br>
+                                                {%else%}
+                                                {% endif %}
+                                                
+                                                {% endfor -%}
+                                                {%else%}                             
+                                                {% endif %}
+                                                </td>
+
+                                                <td>
+                                                {% if pges %}
+                                                {% for pge in pges -%}
+                                                
+                                                {% if pge[2]==5 and pge[0]==datoE[0]  %}
+                                                {{pge[4]}}<br>
+                                                {%else%}
+                                                {% endif %}
+                                                
+                                                {% endfor -%}
+                                                {%else%}                             
+                                                {% endif %}
+                                                </td>
+                                                
+                                                
+
+                                                <td style="background-color: white !important;">
+                                                    <div class="hstack gap-2 fs-15">
+                                                        
+                                                        <button data-bs-toggle="modal" data-bs-target="#modalEditar{{datoE[0]}}" class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i class="ri-edit-line"></i></button>
+                                                        <a href="/estados/delete/{{datoE[0]}}" class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i class="ri-delete-bin-line"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                
+                                            {% endfor -%}
+                                            {%else%}                             
+                                            {% endif %}
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        {% if datosE %}
+        {% for datoE in datosE -%}
+        <div class="modal fade" id="modalEditar{{datoE[0]}}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Estado</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="mb-3" method="post" action="/estados/edit/{{datoE[0]}}">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input value="{{datoE[1]}}" type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+                        
+                        <div class="mb-3 d-flex justify-content-between">
+                            
+                            <div class="col-8">
+                                <label class="form-label" for="pestanas">Pestañas de Estados</label>
+                                <select class="form-control" name="pestanas" id="pestanas">
+
+                                    
+                                    {% if PCSposts %}
+                                    {% for PCSpost in PCSposts -%}
+                                    
+                                    {% if datoE[3]==PCSpost[0] %}
+                                    <option selected value="{{PCSpost[0]}}">{{PCSpost[1]}} - {{PCSpost[3]}} - {{PCSpost[5]}}</option>
+                                    {%else%}
+                                    <option value="{{PCSpost[0]}}">{{PCSpost[1]}} - {{PCSpost[3]}} - {{PCSpost[5]}}</option>
+                                    {% endif %}
+                                    
+                                    {% endfor -%}
+                                    {%else%}                             
+                                    {% endif %}
+
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <label for="color" class="form-label">Color</label>
+                                <input value="{{datoE[2]}}" type="color" class="form-control form-control-color my-auto" id="color" name="color" required>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div class="col-5">
+                                <label class="form-label" for="orden">Orden</label>
+                                <input value="{{datoE[4]}}" class="form-control" type="number" name="orden" id="orden" required>
+                            </div>
+                            <div class="col-5">
+                                <label for="usado" class="form-label">Estado Usado para:</label>
+                          
+                                <select name="usado" id="usado" class="form-control">
+                                  
+                                  {% if datoE[5]==1 %}
+                                  <option selected value="1">Crear</option>
+                                  <option value="2">Editar</option>
+                                  <option value="3">Crear y/o Editar</option>
+                                  {% elif datoE[5]==2 %}
+                                  <option value="1">Crear</option>
+                                  <option selected value="2">Editar</option>
+                                  <option value="3">Crear y/o Editar</option>
+                                  {% elif datoE[5]==3 %}
+                                  <option value="1">Crear</option>
+                                  <option value="2">Editar</option>
+                                  <option selected value="3">Crear y/o Editar</option>
+                                  {% endif %}
+                                </select>
+                            </div>
+                        </div>
+
+                        {% if datoE[5]==1 %}
+                        <div class="mb-3 estado_estado d-none">
+                            <label for="estado-estado" class="form-label">Estados sobre los que se va a cambiar la venta a este estado</label>
+                            <select class="form-control multiple-select" multiple="multiple" name="estado-estado" id="estado-estado">
+                                
+                                {% if Eposts %}
+                                {% for Epost in Eposts -%}
+
+                                <option value="{{Epost[0]}}">{{Epost[1]}} - {{Epost[3]}} - {{Epost[5]}} - {{Epost[7]}}</option>
+                                
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+
+
+                            </select>
+                        </div>
+                        {% else %}
+                        <div class="mb-3 estado_estado">
+                            <label for="estado-estado" class="form-label">Estados sobre los que se va a cambiar la venta a este estado</label>
+                            <select class="form-control multiple-select" multiple="multiple" name="estado-estado" id="estado-estado">
+                                
+                        {% if Eposts %}
+                        {% for Epost in Eposts -%}
+
+                            {% set break=namespace(break1=False) %}
+                            
+                            {% if EEposts %}
+                            {% for EEpost in EEposts -%}
+
+
+                                
+                                
+
+                                {% if EEpost[0]==Epost[0] and EEpost[1]==datoE[0]  %}
+                                    <option selected value="{{Epost[0]}}">{{Epost[1]}} - {{Epost[3]}} - {{Epost[5]}} - {{Epost[7]}}</option>
+                                    {% set break.break1=True %}
+                                {% endif %}
+
+                                
+
+
+                                
+                                
+
+                            {% endfor -%}
+                            {% else %}
+                            {% endif %}
+                            
+
+                            {% if break.break1==False %}
+                            <option value="{{Epost[0]}}">{{Epost[1]}} - {{Epost[3]}} - {{Epost[5]}} - {{Epost[7]}}</option>
+                            {% endif %}
+                            
+
+                        {% endfor -%}
+                        {% else %}
+                        {% endif %}
+
+
+
+
+                            </select>
+                        </div>
+                        {% endif %}
+
+                        <div class="mb-3">
+                            <label for="crear-cambiar" class="form-label">Pueden crear/cambiar ventas a este estado</label>
+                            <select class="form-control multiple-select" multiple="multiple" name="crear-cambiar" id="crear-cambiar">
+                                
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+
+                                {% set break=namespace(break1=False) %}
+
+
+                                {% if pges %}
+                                {% for pge in pges -%}
+                                
+                                {% if pge[2]==1 and pge[0]==datoE[0] and Gpost[0]==pge[1]  %}
+                                <option selected value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                    {% set break.break1=True %}
+                                {%else%}
+                                {% endif %}
+                                
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+
+                                {% if break.break1==False %}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endif %}
+
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar" class="form-label">Pueden editar ventas con este estado</label>
+                            <select class="form-control multiple-select" multiple="multiple" name="editar" id="editar">
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+
+                                {% set break=namespace(break1=False) %}
+
+
+                                {% if pges %}
+                                {% for pge in pges -%}
+                                
+                                {% if pge[2]==2 and pge[0]==datoE[0] and Gpost[0]==pge[1]  %}
+                                <option selected value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                    {% set break.break1=True %}
+                                {%else%}
+                                {% endif %}
+                                
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+
+                                {% if break.break1==False %}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endif %}
+
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                            </select>
+                        </div>
+                        
+                        
+                        <div class="mb-3">
+                            <label for="ver" class="form-label">Pueden ver ventas con este estado</label>
+                            <select class="form-control multiple-select" multiple="multiple" name="ver" id="ver">
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+
+                                {% set break=namespace(break1=False) %}
+
+
+                                {% if pges %}
+                                {% for pge in pges -%}
+                                
+                                {% if pge[2]==3 and pge[0]==datoE[0] and Gpost[0]==pge[1]  %}
+                                <option selected value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                    {% set break.break1=True %}
+                                {%else%}
+                                {% endif %}
+                                
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+
+                                {% if break.break1==False %}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endif %}
+
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eliminar" class="form-label">Pueden eliminar ventas con este estado</label>
+                            <select class="form-control multiple-select" multiple="multiple" name="eliminar" id="eliminar">
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+
+                                {% set break=namespace(break1=False) %}
+
+
+                                {% if pges %}
+                                {% for pge in pges -%}
+                                
+                                {% if pge[2]==4 and pge[0]==datoE[0] and Gpost[0]==pge[1]  %}
+                                <option selected value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                    {% set break.break1=True %}
+                                {%else%}
+                                {% endif %}
+                                
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+
+                                {% if break.break1==False %}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endif %}
+
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="historial" class="form-label">Pueden ver historial de venta con este estado</label>
+                            <select class="form-control multiple-select" multiple="multiple" name="historial" id="historial">
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+
+                                {% set break=namespace(break1=False) %}
+
+
+                                {% if pges %}
+                                {% for pge in pges -%}
+                                
+                                {% if pge[2]==5 and pge[0]==datoE[0] and Gpost[0]==pge[1]  %}
+                                <option selected value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                    {% set break.break1=True %}
+                                {%else%}
+                                {% endif %}
+                                
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+
+                                {% if break.break1==False %}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endif %}
+
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                            </select>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end ">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary mx-2">Guardar</button>
+                        </div>
+                        
+                      </form>
+                </div>
+                <div class="modal-footer">
+                
+                </div>
+            </div>
+            </div>
+        </div>
+        {% endfor -%}
+        {%else%}                             
+        {% endif %}
+
+
+
+
+
+
+
+        <div class="modal fade" id="modalCrear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Crear Estados</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="mb-3" method="post" action="/estados">
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre" required>
+                        </div>
+                        
+                        <div class="mb-3 d-flex justify-content-between">
+                            
+                            <div class="col-8">
+                                <label class="form-label" for="pestanas">Pestañas de Estados</label>
+                                <select class="form-control" name="pestanas" id="pestanas">
+
+                                    
+                                    {% if PCSposts %}
+                                    {% for PCSpost in PCSposts -%}
+                                    <option value="{{PCSpost[0]}}">{{PCSpost[1]}} - {{PCSpost[3]}} - {{PCSpost[5]}}</option>
+                                    {% endfor -%}
+                                    {%else%}                             
+                                    {% endif %}
+
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <label for="color" class="form-label">Color</label>
+                                <input type="color" class="form-control form-control-color my-auto" id="color" name="color" required>
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="mb-3 d-flex justify-content-between">
+                            <div class="col-5">
+                                <label class="form-label" for="orden">Orden</label>
+                                <input class="form-control" type="number" name="orden" id="orden" required>
+                            </div>
+                            <div class="col-5">
+                                <label for="usado" class="form-label">Estado Usado para:</label>
+                          
+                                <select name="usado" id="usado" class="form-control">
+                                  <option value="1">Crear</option>
+                                  <option value="2">Editar</option>
+                                  <option value="3">Crear y/o Editar</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3 estado_estado d-none">
+                            <label for="estado-estado" class="form-label">Estados sobre los que se va a cambiar la venta a este estado</label>
+                            <select class="form-control multiple-select" multiple="multiple" name="estado-estado" id="estado-estado">
+                                
+                                {% if Eposts %}
+                                {% for Epost in Eposts -%}
+                                <option value="{{Epost[0]}}">{{Epost[1]}} - {{Epost[3]}} - {{Epost[5]}} - {{Epost[7]}}</option>
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                                
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="crear-cambiar" class="form-label">Pueden crear/cambiar ventas a este estado</label>
+                            <select class="form-control multiple-select" multiple="multiple" name="crear-cambiar" id="crear-cambiar">
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editar" class="form-label">Pueden editar ventas con este estado</label>
+                            <select class="form-control multiple-select" multiple="multiple" name="editar" id="editar">
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                            </select>
+                        </div>
+                        
+                        
+                        <div class="mb-3">
+                            <label for="ver" class="form-label">Pueden ver ventas con este estado</label>
+                            <select class="form-control multiple-select" multiple="multiple" name="ver" id="ver">
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="eliminar" class="form-label">Pueden eliminar ventas con este estado</label>
+                            <select class="form-control multiple-select" multiple="multiple" name="eliminar" id="eliminar">
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="historial" class="form-label">Pueden ver historial de venta con este estado</label>
+                            <select class="form-control multiple-select" multiple="multiple" name="historial" id="historial">
+                                {% if Gposts %}
+                                {% for Gpost in Gposts -%}
+                                <option value="{{Gpost[0]}}">{{Gpost[1]}}</option>
+                                {% endfor -%}
+                                {%else%}                             
+                                {% endif %}
+                            </select>
+                        </div>
+                        
+                        <div class="d-flex justify-content-end ">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary mx-2">Guardar</button>
+                        </div>
+                        
+                      </form>
+                </div>
+                <div class="modal-footer">
+                
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <div class="modal fade" id="modalPassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cambiar Contraseña</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    
+                    <form action="/change-password" method="post" class="row gy-4">
+    
+                        <div class="col-md-6 col-sm-12">
+                            <p class="mb-2 text-muted">Antigua Contraseña</p>
+                            <input type="password" class="form-control" id="old-password" name="old-password">
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <p class="mb-2 text-muted">Nueva Contraseña</p>
+                            <input type="password" class="form-control" id="new-password" name="new-password" >
+                        </div>
+                        
+                        <div class="col-sm-12 d-flex justify-content-center">
+                            <input type="submit" class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12 mx-auto btn btn-primary" value="Cambiar Contraseña"></input>
+                        </div>
+                    
+    
+                    </form>
+    
+                </div>
+                <div class="modal-footer">
+                
+                </div>
+            </div>
+            </div>
+        </div>
+
+                
+        <!-- End::app-content -->
+        
+        
+        <!-- Footer Start -->
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <div class="container">
+                <span class="text-muted"> Copyright © <span id="year"></span> <a
+                        href="javascript:void(0);" class="text-dark fw-semibold">LanTech</a>.
+                    Designed with <span class="bi bi-heart-fill text-danger"></span> by <a href="https://www.lantechperu.com">
+                        <span class="fw-semibold text-primary text-decoration-underline">LanTech S.A.C.</span>
+                    </a> All
+                    rights
+                    reserved
+                </span>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+    </div>
+
+    
+    <div class="scrollToTop">
+        <span class="arrow"><i class="ri-arrow-up-s-fill fs-20"></i></span>
+    </div>
+    <div id="responsive-overlay"></div>
+
+    <!-- Popper JS -->
+    <script src="../static/libs/@popperjs/core/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Defaultmenu JS -->
+    <script src="../static/js/defaultmenu.min.js"></script>
+
+    <!-- Node Waves JS-->
+    <script src="../static/libs/node-waves/waves.min.js"></script>
+
+    <!-- Sticky JS -->
+    <script src="../static/js/sticky.js"></script>
+
+    <!-- Simplebar JS -->
+    <script src="../static/libs/simplebar/simplebar.min.js"></script>
+    <script src="../static/js/simplebar.js"></script>
+
+    <!-- Color Picker JS -->
+    <script src="../static/libs/@simonwep/pickr/pickr.es5.min.js"></script>
+
+
+    <!-- JSVector Maps JS -->
+    <script src="../static/libs/jsvectormap/js/jsvectormap.min.js"></script>
+
+    <!-- JSVector Maps MapsJS -->
+    <script src="../static/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!-- Apex Charts JS -->
+    <script src="../static/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Chartjs Chart JS -->
+    <script src="../static/libs/chart.js/chart.min.js"></script>
+
+    <!-- CRM-Dashboard -->
+    <script src="../static/js/crm-dashboard.js"></script>
+
+    
+    <!-- Custom-Switcher JS -->
+    <script src="../static/js/custom-switcher.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../static/js/custom.js"></script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.0.5/dist/js/select2.min.js"></script>
+
+
+    <script src="../static/js/table2excel.js"></script>
+
+    <script>
+
+        $(document).ready(function() {
+            
+            $('.multiple-select').select2();
+            
+            console.log($('.multiple-select'));
+                // $('.multiple-select').slice(index,index+1).select2();
+        });
+
+
+
+        let usado=document.querySelectorAll('#usado')
+        let estado=document.querySelectorAll('.estado_estado')
+
+        for (let i = 0; i < usado.length; i++) {
+        
+            usado[i].onchange=function(){
+            if (usado[i].value==2 || usado[i].value==3) {
+                estado[i].classList.remove("d-none");
+            }
+            if (usado[i].value==1) {
+                estado[i].classList.add("d-none");
+            }
+            }
+            
+        }
+
+        let boton_exportar = document.querySelector(".export-excel")
+
+        boton_exportar.addEventListener('click',function(){
+            var table2excel = new Table2Excel();
+            table2excel.export(document.querySelector(".table-download"));
+        })
+
+
+    </script>
+
+    
+
+</body>
+
+</html>

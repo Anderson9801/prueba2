@@ -1,0 +1,1796 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-nav-layout="vertical" data-theme-mode="light" data-header-styles="light" data-menu-styles="dark" data-toggled="close">
+
+<head>
+
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Grupos de Usuarios </title>
+    <meta name="Description" content="Bootstrap Responsive Admin Web Dashboard HTML5 Template">
+    <meta name="Author" content="Spruko Technologies Private Limited">
+	<meta name="keywords" content="admin,admin dashboard,admin panel,admin template,bootstrap,clean,dashboard,flat,jquery,modern,responsive,premium admin templates,responsive admin,ui,ui kit.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="../static/images/brand-logos/favicon.ico" type="image/x-icon">
+    
+    <!-- Choices JS -->
+    <script src="../static/libs/choices.js/public/static/scripts/choices.min.js"></script>
+
+    <!-- Main Theme Js -->
+    <script src="../static/js/main.js"></script>
+    
+    <!-- Bootstrap Css -->
+    <link id="style" href="../static/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+
+    <!-- Style Css -->
+    <link href="../static/css/styles.min.css" rel="stylesheet" >
+
+    <!-- Icons Css -->
+    <link href="../static/css/icons.css" rel="stylesheet" >
+
+    <!-- Node Waves Css -->
+    <link href="../static/libs/node-waves/waves.min.css" rel="stylesheet" > 
+
+    <!-- Simplebar Css -->
+    <link href="../static/libs/simplebar/simplebar.min.css" rel="stylesheet" >
+    
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="../static/libs/flatpickr/flatpickr.min.css">
+    <link rel="stylesheet" href="../static/libs/@simonwep/pickr/themes/nano.min.css">
+
+    <!-- Choices Css -->
+    <link rel="stylesheet" href="../static/libs/choices.js/public/static/styles/choices.min.css">
+
+
+<link rel="stylesheet" href="../static/libs/jsvectormap/css/jsvectormap.min.css">
+
+<link rel="stylesheet" href="../static/libs/swiper/swiper-bundle.min.css">
+
+</head>
+
+<body>
+
+    <!-- Start Switcher -->
+    
+    <!-- End Switcher -->
+
+    <div class="page">
+         <!-- app-header -->
+         <header class="app-header">
+
+            <!-- Start::main-header-container -->
+            <div class="main-header-container container-fluid">
+
+                <!-- Start::header-content-left -->
+                <div class="header-content-left">
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <div class="horizontal-logo">
+                            <a href="index.html" class="header-logo">
+                                <img src="../static/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                                <img src="../static/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                                <img src="../static/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                                <img src="../static/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- End::header-element -->
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link -->
+                        <a aria-label="Hide Sidebar" class="sidemenu-toggle header-link animated-arrow hor-toggle horizontal-navtoggle" data-bs-toggle="sidebar" href="javascript:void(0);"><span></span></a>
+                        <!-- End::header-link -->
+                    </div>
+                    <!-- End::header-element -->
+
+                </div>
+                <!-- End::header-content-left -->
+
+                <!-- Start::header-content-right -->
+                <div class="header-content-right">
+                    
+
+                    <!-- Start::header-element -->
+                    <div class="header-element">
+                        <!-- Start::header-link|dropdown-toggle -->
+                        <a href="#" class="header-link dropdown-toggle" id="mainHeaderProfile" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            <div class="d-flex align-items-center">
+                                <div class="me-sm-2 me-0">
+                                    <img src="../static/images/faces/perfil.png" alt="img" width="32" height="32" class="rounded-circle">
+                                </div>
+                                {% if username %}
+                                    <div class="d-sm-block d-none">
+                                        <p class="fw-semibold mb-0 lh-1">{{username[0]}}</p>
+                                        <span class="op-7 fw-normal d-block fs-11">{{username[1]}}</span>
+                                    </div>
+                                {%else%}
+                                    
+                                {% endif %}
+                            </div>
+                        </a>
+                        <!-- End::header-link|dropdown-toggle -->
+                        <ul class="main-header-dropdown dropdown-menu pt-0 overflow-hidden dropdown-menu-end" aria-labelledby="mainHeaderProfile">
+                            <li><a class="dropdown-item d-flex" href="/change-password"><i class="ri-lock-password-line"></i>&nbsp;Contraseña</a></li>
+                        {% if config_empresa == True %}
+                            <li><a class="dropdown-item d-flex" href="/config-general"><i class="ri-tools-fill"></i>&nbsp;Config. General</a></li>
+                        {%else%}
+                        {% endif %}    
+                            <li><a class="dropdown-item d-flex border-block-end" href="/logout"><i class="ri-logout-box-r-line"></i>&nbsp;Cerrar Sesión</a></li>
+                        </ul>
+                    </div>  
+                    
+
+                </div>
+                
+
+            </div>
+            
+
+        </header>
+        <!-- /app-header -->
+        <!-- Start::app-sidebar -->
+        <aside class="app-sidebar sticky" id="sidebar">
+
+            <!-- Start::main-sidebar-header -->
+            <div class="main-sidebar-header">
+                <a href="/empresa" class="header-logo">
+                    <img src="../static/images/brand-logos/desktop-logo.png" alt="logo" class="desktop-logo">
+                    <img src="../static/images/brand-logos/toggle-logo.png" alt="logo" class="toggle-logo">
+                    <img src="../static/images/brand-logos/desktop-dark.png" alt="logo" class="desktop-dark">
+                    <img src="../static/images/brand-logos/toggle-dark.png" alt="logo" class="toggle-dark">
+                </a>
+            </div>
+            <!-- End::main-sidebar-header -->
+
+            <!-- Start::main-sidebar -->
+            <div class="main-sidebar" id="sidebar-scroll">
+
+                <!-- Start::nav -->
+                <nav class="main-menu-container nav nav-pills flex-column sub-open">
+                    <div class="slide-left" id="slide-left">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path> </svg>
+                    </div>
+                    <ul class="main-menu">
+                        <!-- Start::slide__category -->
+                        <!-- End::slide__category -->
+
+                        <!-- Start::slide -->
+                        <li class="slide has-sub">
+                            <a href="/empresa" class="side-menu__item">
+                                <i class="bx bx-home side-menu__icon"></i>
+                                <span class="side-menu__label">Inicio</span>
+                                
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Inicio</a>
+                                </li>
+                                
+                            </ul>
+                        </li>
+                        <!-- End::slide -->
+
+
+
+
+
+                    
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-cog side-menu__icon'></i>
+                                <span class="side-menu__label">Config. Empresa</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Dashboards</a>
+                                </li>
+                            {% if config_empresa == True %}
+                                <li class="slide">
+                                    <a href="/config-general" class="side-menu__item">Config. General</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+                                <li class="slide">
+                                    <a href="/change-password" class="side-menu__item">Cambiar Contraseña</a>
+                                </li>
+                            </ul>
+                        </li>
+                    
+
+                    {% if config_asistencia == True %}
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-hourglass side-menu__icon'></i>
+                                <span class="side-menu__label">Config. Asistencia</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Config. Asistencia</a>
+                                </li>
+                            {% if horarios == True %}
+                                <li class="slide">
+                                    <a href="/horarios" class="side-menu__item">Horarios</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+
+                            {% if sedes == True %}
+                                <li class="slide">
+                                    <a href="/sedes" class="side-menu__item">Sedes</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+                            </ul>
+                        </li>
+                    {%else%}
+                    {% endif %}
+                    
+                    {% if admin_usuarios == True %}
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-group side-menu__icon'></i>
+                                <span class="side-menu__label">Admin. Usuarios</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Admin. Usuarios</a>
+                                </li>
+                            {% if grupos == True %}
+                                <li class="slide">
+                                    <a href="/grupos-usuarios" class="side-menu__item">Grupos de Usuarios</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+
+                            {% if usuarios == True %}
+                                <li class="slide">
+                                    <a href="/usuarios" class="side-menu__item">Usuarios</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+                            
+
+                            </ul>
+                        </li>
+                    {%else%}
+                    {% endif %}
+
+                    {% if reportes == True %}
+                        <li class="slide has-sub">
+                            <a href="javascript:void(0);" class="side-menu__item">
+                                <i class='bx bxs-pie-chart-alt-2 side-menu__icon' ></i>
+                                <span class="side-menu__label">Reportes</span>
+                                <i class="bx bx-chevron-right side-menu__angle"></i>
+                            </a>
+                            <ul class="slide-menu child1">
+                                <li class="slide side-menu__label1">
+                                    <a href="javascript:void(0)">Reportes</a>
+                                </li>
+                            {% if asistencia == True %}
+                                <li class="slide">
+                                    <a href="/asistencia" class="side-menu__item">Asistencia</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+                            
+                            {% if accesos == True %}
+                                <li class="slide">
+                                    <a href="/accesos" class="side-menu__item">Acceso al Sistema</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+
+                            {% if movimientos == True %}
+                                <li class="slide">
+                                    <a href="/movimientos-usuarios" class="side-menu__item">Movimientos por Usuario</a>
+                                </li>
+                            {%else%}
+                            {% endif %}
+                            </ul>
+                        </li>
+                    {%else%}
+                    {% endif %}
+
+                        <!-- End::slide -->
+                    </ul>
+                    <div class="slide-right" id="slide-right"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"> <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path> </svg></div>
+                </nav>
+                <!-- End::nav -->
+
+            </div>
+            <!-- End::main-sidebar -->
+
+        </aside>
+        <!-- End::app-sidebar -->
+        <br>
+        <!-- Start::app-content -->
+        <div class="main-content app-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xl-12">
+                        <div class="card custom-card">
+                            <div class="card-header justify-content-between">
+                                <div class="card-title">
+                                    Grupos de Usuarios
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-success btn-wave" data-bs-toggle="modal" data-bs-target="#modalCrear"><i class="bi bi-plus-lg"></i> Crear Nuevo</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table text-nowrap">
+                                        <thead class="table-primary">
+                                            <tr>
+                                                <th scope="col">Nombre</th>
+                                                <th scope="col">Horario</th>
+                                                
+                                                <th scope="col">Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                    {% if get_grupos %}
+                                        {% for get_grupo in get_grupos -%}
+                                            <tr>
+                                                <th scope="row">{{get_grupo[1]}}</th>
+                                                <td>{{get_grupo[2]}}</td>
+                                                <td>
+                                                    <div class="hstack gap-2 fs-15">
+                                                        <button data-bs-toggle="modal" data-bs-target="#modalEditar{{get_grupo[0]}}" class="btn btn-icon btn-sm btn-info-transparent rounded-pill"><i class="ri-edit-line"></i></button>
+                                                        <a href="/grupos-usuarios/delete/{{get_grupo[0]}}" class="btn btn-icon btn-sm btn-danger-transparent rounded-pill"><i class="ri-delete-bin-line"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        {% endfor -%}
+                                    {%else%}
+                                            <span>No hay información.</span>     
+                                    {% endif %}
+                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        {% if get_grupos %}
+        {% for get_grupo in get_grupos -%}
+        
+        <div class="modal fade" id="modalEditar{{get_grupo[0]}}" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar Grupo de Usuarios</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/grupos-usuarios/edit/{{get_grupo[0]}}" method="post">
+                        <div class="mb-3">
+                          <label for="nombre" class="form-label">Nombre</label>
+                          <input type="text" value="{{get_grupo[1]}}" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                          <label for="direccion" class="form-label">Horario</label>
+                          
+                          <select name="horario" id="horario" class="form-control">
+                            
+                            
+                            {% if get_grupo[2]=="" %}
+                                <option value="0" selected></option>
+                            {%else%}
+                                <option value="0"></option>
+                            {% endif %}
+
+
+
+                            {% if get_horarios %}
+                                {% for get_horario in get_horarios -%}
+                                    {% if get_horario[1]==get_grupo[2] %}
+                                        <option value="{{get_horario[0]}}" selected>{{get_horario[1]}}</option>
+                                    {%else%}
+                                        <option value="{{get_horario[0]}}">{{get_horario[1]}}</option> 
+                                    {% endif %}
+                                {% endfor -%}
+                            {%else%}     
+                            {% endif %}
+                            
+                          </select>
+                        </div>
+                        <br>
+                        <h6>Permisos</h6>
+                        <br>
+                        <div class="form-check">
+                            {% if get_grupo[3]==True %}
+                            <input checked class="form-check-input empresa" onchange="checkEmpresa(this)" type="checkbox" value="1" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input empresa" onchange="checkEmpresa(this)" type="checkbox" value="1" name="checkbox" id="checkbox"> 
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                                Empresa
+                            </label>
+                        </div>
+                        <div class="form-check mx-2">
+                            {% if get_grupo[4]==True %}
+                            <input checked class="form-check-input config_empresa" onchange="checkCEmpresa(this)" type="checkbox" value="2" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input config_empresa" onchange="checkCEmpresa(this)" type="checkbox" value="2" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Config. Empresa
+                            </label>
+                        </div>
+                        <div class="form-check mx-2">
+                            {% if get_grupo[5]==True %}
+                            <input checked class="form-check-input config_asistencia" onchange="checkCAsistencia(this)" type="checkbox" value="3" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input config_asistencia" onchange="checkCAsistencia(this)" type="checkbox" value="3" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Config. Asistencia
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            {% if get_grupo[6]==True %}
+                            <input checked class="form-check-input horarios" onchange="checkHorarios(this)" type="checkbox" value="4" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input horarios" onchange="checkHorarios(this)" type="checkbox" value="4" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Horarios
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            {% if get_grupo[7]==True %}
+                            <input checked class="form-check-input sedes" onchange="checkSedes(this)" type="checkbox" value="5" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input sedes" onchange="checkSedes(this)" type="checkbox" value="5" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Sedes
+                            </label>
+                        </div>
+                        <div class="form-check mx-2">
+                            {% if get_grupo[8]==True %}
+                            <input checked class="form-check-input admin_usuarios" onchange="checkAUsuarios(this)" type="checkbox" value="6" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input admin_usuarios" onchange="checkAUsuarios(this)" type="checkbox" value="6" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Admin. de Usuarios
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            {% if get_grupo[9]==True %}
+                            <input checked class="form-check-input grupos_usuarios" onchange="checkGUsuarios(this)" type="checkbox" value="7" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input grupos_usuarios" onchange="checkGUsuarios(this)" type="checkbox" value="7" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Grupos de Usuarios
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            {% if get_grupo[10]==True %}
+                            <input checked class="form-check-input usuarios" onchange="checkUsuarios(this)" type="checkbox" value="8" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input usuarios" onchange="checkUsuarios(this)" type="checkbox" value="8" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Usuarios
+                            </label>
+                        </div>
+                        <div class="form-check mx-2">
+                            {% if get_grupo[11]==True %}
+                            <input checked class="form-check-input reportes" onchange="checkREmpresa(this)" type="checkbox" value="9" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input reportes" onchange="checkREmpresa(this)" type="checkbox" value="9" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Reportes
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            {% if get_grupo[12]==True %}
+                            <input checked class="form-check-input asistencia" onchange="checkAsistencia(this)" type="checkbox" value="10" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input asistencia" onchange="checkAsistencia(this)" type="checkbox" value="10" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Asistencia
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            {% if get_grupo[13]==True %}
+                            <input checked class="form-check-input accesos" onchange="checkAccesos(this)" type="checkbox" value="11" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input accesos" onchange="checkAccesos(this)" type="checkbox" value="11" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Accesos
+                            </label>
+                        </div>
+                        <br>
+                        <div class="form-check">
+                            {% if get_grupo[14]==True %}
+                            <input checked class="form-check-input ventas" onchange="checkVentas(this)" type="checkbox" value="12" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input ventas" onchange="checkVentas(this)" type="checkbox" value="12" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Ventas
+                            </label>
+                        </div>
+                        <div class="form-check mx-2">
+                            {% if get_grupo[15]==True %}
+                            <input checked class="form-check-input config-campanas" onchange="checkCCampanas(this)" type="checkbox" value="13" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input config-campanas" onchange="checkCCampanas(this)" type="checkbox" value="13" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Config. de Campañas
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            {% if get_grupo[16]==True %}
+                            <input checked class="form-check-input campanas" onchange="checkCampanas(this)" type="checkbox" value="14" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input campanas" onchange="checkCampanas(this)" type="checkbox" value="14" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Campañas
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            {% if get_grupo[17]==True %}
+                            <input checked class="form-check-input pestanas" onchange="checkPestanas(this)" type="checkbox" value="15" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input pestanas" onchange="checkPestanas(this)" type="checkbox" value="15" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Pestañas
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            {% if get_grupo[18]==True %}
+                            <input checked class="form-check-input estados" onchange="checkEstados(this)" type="checkbox" value="16" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input estados" onchange="checkEstados(this)" type="checkbox" value="16" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Estados
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            {% if get_grupo[19]==True %}
+                            <input checked class="form-check-input bloques-campos" onchange="checkBCampos(this)" type="checkbox" value="17" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input bloques-campos" onchange="checkBCampos(this)" type="checkbox" value="17" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Bloques de Campos
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            {% if get_grupo[20]==True %}
+                            <input checked class="form-check-input campos" onchange="checkCampos(this)" type="checkbox" value="18" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input campos" onchange="checkCampos(this)" type="checkbox" value="18" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Campos
+                            </label>
+                        </div>
+                        <div class="form-check mx-2">
+                            {% if get_grupo[21]==True %}
+                            <input checked class="form-check-input reportes-ventas" onchange="checkRVentas(this)" type="checkbox" value="19" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input reportes-ventas" onchange="checkRVentas(this)" type="checkbox" value="19" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Reportes
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            {% if get_grupo[22]==True %}
+                            <input checked class="form-check-input reportes-1" onchange="checkR1(this)" type="checkbox" value="20" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input reportes-1" onchange="checkR1(this)" type="checkbox" value="20" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Reportes 1
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            {% if get_grupo[23]==True %}
+                            <input checked class="form-check-input reportes-2" onchange="checkR2(this)" type="checkbox" value="21" name="checkbox" id="checkbox">
+                            {%else%}
+                            <input class="form-check-input reportes-2" onchange="checkR2(this)" type="checkbox" value="21" name="checkbox" id="checkbox">
+                            {% endif %}
+                            <label class="form-check-label" for="checkbox">
+                              Reportes 2
+                            </label>
+                        </div>
+
+                        
+                        
+                        <div class="d-flex justify-content-end ">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary mx-2">Guardar</button>
+                        </div>
+                        
+                      </form>
+                </div>
+                <div class="modal-footer">
+                
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+        {% endfor -%}
+        {%else%}     
+        {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+        <!-- End::app-content -->
+        <!-- Modal -->
+        <div class="modal fade" id="modalCrear" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Crear Grupo de Usuarios</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="/grupos-usuarios" method="post">
+                        <div class="mb-3">
+                          <label for="nombre" class="form-label">Nombre</label>
+                          <input type="text" class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+                          <label for="direccion" class="form-label">Horario</label>
+                          
+                          <select name="horario" id="horario" class="form-control">
+                            <option value="0"></option>
+                            {% if get_horarios %}
+                                {% for get_horario in get_horarios -%}
+                                    <option value="{{get_horario[0]}}">{{get_horario[1]}}</option>
+                                {% endfor -%}
+                            {%else%}     
+                            {% endif %}
+                          </select>
+                        </div>
+                        <br>
+                        <h6>Permisos</h6>
+                        <br>
+                        <div class="form-check">
+                            <input class="form-check-input empresa" onchange="checkEmpresa(this)" type="checkbox" value="1" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Empresa
+                            </label>
+                        </div>
+                        <div class="form-check mx-2">
+                            <input class="form-check-input config_empresa" onchange="checkCEmpresa(this)" type="checkbox" value="2" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Config. Empresa
+                            </label>
+                        </div>
+                        <div class="form-check mx-2">
+                            <input class="form-check-input config_asistencia" onchange="checkCAsistencia(this)" type="checkbox" value="3" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Config. Asistencia
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            <input class="form-check-input horarios" onchange="checkHorarios(this)" type="checkbox" value="4" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Horarios
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            <input class="form-check-input sedes" onchange="checkSedes(this)" type="checkbox" value="5" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Sedes
+                            </label>
+                        </div>
+                        <div class="form-check mx-2">
+                            <input class="form-check-input admin_usuarios" onchange="checkAUsuarios(this)" type="checkbox" value="6" name="checkbox" id=checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Admin. de Usuarios
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            <input class="form-check-input grupos_usuarios" onchange="checkGUsuarios(this)" type="checkbox" value="7" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Grupos de Usuarios
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            <input class="form-check-input usuarios" onchange="checkUsuarios(this)" type="checkbox" value="8" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Usuarios
+                            </label>
+                        </div>
+                        <div class="form-check mx-2">
+                            <input class="form-check-input reportes" onchange="checkREmpresa(this)" type="checkbox" value="9" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Reportes
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            <input class="form-check-input asistencia" onchange="checkAsistencia(this)" type="checkbox" value="10" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Asistencia
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            <input class="form-check-input accesos" onchange="checkAccesos(this)" type="checkbox" value="11" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Accesos
+                            </label>
+                        </div>
+                        <br>
+                        <div class="form-check">
+                            <input checked class="form-check-input ventas" onchange="checkVentas(this)" type="checkbox" value="12" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Ventas
+                            </label>
+                        </div>
+                        <div class="form-check mx-2">
+                            <input class="form-check-input config-campanas" onchange="checkCCampanas(this)" type="checkbox" value="13" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Config. de Campañas
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            <input class="form-check-input campanas" onchange="checkCampanas(this)" type="checkbox" value="14" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Campañas
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            <input class="form-check-input pestanas" onchange="checkPestanas(this)" type="checkbox" value="15" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Pestañas
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            <input class="form-check-input estados" onchange="checkEstados(this)" type="checkbox" value="16" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Estados
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            <input class="form-check-input bloques-campos" onchange="checkBCampos(this)" type="checkbox" value="17" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Bloques de Campos
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            <input class="form-check-input campos" onchange="checkCampos(this)" type="checkbox" value="18" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Campos
+                            </label>
+                        </div>
+                        <div class="form-check mx-2">
+                            <input class="form-check-input reportes-ventas" onchange="checkRVentas(this)" type="checkbox" value="19" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Reportes
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            <input class="form-check-input reportes-1" onchange="checkR1(this)" type="checkbox" value="20" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Reportes 1
+                            </label>
+                        </div>
+                        <div class="form-check mx-4">
+                            <input class="form-check-input reportes-2" onchange="checkR2(this)" type="checkbox" value="21" name="checkbox" id="checkbox">
+                            <label class="form-check-label" for="checkbox">
+                              Reportes 2
+                            </label>
+                        </div>
+
+                        
+                        
+                        <div class="d-flex justify-content-end ">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="submit" class="btn btn-primary mx-2">Guardar</button>
+                        </div>
+                        
+                      </form>
+                </div>
+                <div class="modal-footer">
+                
+                </div>
+            </div>
+            </div>
+        </div>
+        
+        <!-- Footer Start -->
+        <footer class="footer mt-auto py-3 bg-white text-center">
+            <div class="container">
+                <span class="text-muted"> Copyright © <span id="year"></span> <a
+                        href="javascript:void(0);" class="text-dark fw-semibold">LanTech</a>.
+                    Designed with <span class="bi bi-heart-fill text-danger"></span> by <a href="https://www.lantechperu.com">
+                        <span class="fw-semibold text-primary text-decoration-underline">LanTech S.A.C.</span>
+                    </a> All
+                    rights
+                    reserved
+                </span>
+            </div>
+        </footer>
+        <!-- Footer End -->
+
+    </div>
+
+    
+    <div class="scrollToTop">
+        <span class="arrow"><i class="ri-arrow-up-s-fill fs-20"></i></span>
+    </div>
+    <div id="responsive-overlay"></div>
+
+    <!-- Popper JS -->
+    <script src="../static/libs/@popperjs/core/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="../static/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Defaultmenu JS -->
+    <script src="../static/js/defaultmenu.min.js"></script>
+
+    <!-- Node Waves JS-->
+    <script src="../static/libs/node-waves/waves.min.js"></script>
+
+    <!-- Sticky JS -->
+    <script src="../static/js/sticky.js"></script>
+
+    <!-- Simplebar JS -->
+    <script src="../static/libs/simplebar/simplebar.min.js"></script>
+    <script src="../static/js/simplebar.js"></script>
+
+    <!-- Color Picker JS -->
+    <script src="../static/libs/@simonwep/pickr/pickr.es5.min.js"></script>
+
+
+    <!-- JSVector Maps JS -->
+    <script src="../static/libs/jsvectormap/js/jsvectormap.min.js"></script>
+
+    <!-- JSVector Maps MapsJS -->
+    <script src="../static/libs/jsvectormap/maps/world-merc.js"></script>
+
+    <!-- Apex Charts JS -->
+    <script src="../static/libs/apexcharts/apexcharts.min.js"></script>
+
+    <!-- Chartjs Chart JS -->
+    <script src="../static/libs/chart.js/chart.min.js"></script>
+
+    <!-- CRM-Dashboard -->
+    <script src="../static/js/crm-dashboard.js"></script>
+
+    
+    <!-- Custom-Switcher JS -->
+    <script src="../static/js/custom-switcher.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="../static/js/custom.js"></script>
+
+    <script>
+
+        let empresa = document.querySelectorAll('.empresa')
+        let config_empresa = document.querySelectorAll('.config_empresa')
+        let config_asistencia = document.querySelectorAll('.config_asistencia')
+        let horarios = document.querySelectorAll('.horarios')
+        let sedes = document.querySelectorAll('.sedes')
+        let admin_usuarios = document.querySelectorAll('.admin_usuarios')
+        let grupos_usuarios = document.querySelectorAll('.grupos_usuarios')
+        let usuarios = document.querySelectorAll('.usuarios')
+        let reportes = document.querySelectorAll('.reportes')
+        let asistencia = document.querySelectorAll('.asistencia')
+        let accesos = document.querySelectorAll('.accesos')
+        
+        for (let i = 0; i < empresa.length; i++) {
+            let empresaa = empresa[i];
+            let config_empresaa = config_empresa[i];
+            let config_asistenciaa = config_asistencia[i];
+            let admin_usuarioss = admin_usuarios[i];
+            let reportess = reportes[i];
+            let horarioss = horarios[i];
+            let sedess = sedes[i];
+            let grupos_usuarioss = grupos_usuarios[i];
+            let usuarioss = usuarios[i];
+            let asistenciaa = asistencia[i];
+            let accesoss = accesos[i];
+
+            empresaa.onchange=function(){
+                if (empresaa.checked==true) {
+                    config_empresa[i].checked = true;
+                    config_asistencia[i].checked = true;
+                    horarios[i].checked = true;
+                    sedes[i].checked = true;
+                    admin_usuarios[i].checked = true;
+                    grupos_usuarios[i].checked = true;
+                    usuarios[i].checked = true;
+                    reportes[i].checked = true;
+                    asistencia[i].checked = true;
+                    accesos[i].checked = true;
+                } else {
+                    config_empresa[i].checked = false;
+                    config_asistencia[i].checked = false;
+                    horarios[i].checked = false;
+                    sedes[i].checked = false;
+                    admin_usuarios[i].checked = false;
+                    grupos_usuarios[i].checked = false;
+                    usuarios[i].checked = false;
+                    reportes[i].checked = false;
+                    asistencia[i].checked = false;
+                    accesos[i].checked = false;
+                }
+            }
+
+            config_empresaa.onchange=function(){
+                if ( config_empresaa.checked == true ) {
+                    empresa[i].checked = true;
+                }
+                else{
+                    if (config_asistencia[i].checked == true || admin_usuarios[i].checked == true || reportes[i].checked == true) {
+                        empresa[i].checked = true;
+                    }
+                    else{
+                        empresa[i].checked = false;
+                    }
+                }
+            }
+
+            config_asistenciaa.onchange=function(){
+                if (config_asistenciaa.checked == true) {
+                    horarios[i].checked = true;
+                    sedes[i].checked = true;
+                    empresa[i].checked = true;
+                }
+                else{
+                    horarios[i].checked = false;
+                    sedes[i].checked = false;
+                    if (config_empresa[i].checked == true || admin_usuarios[i].checked == true || reportes[i].checked == true) {
+                        empresa[i].checked = true;
+                    }
+                    else{
+                        empresa[i].checked = false;
+                    }
+                }
+            }
+
+            admin_usuarioss.onchange=function(){
+                if (admin_usuarioss.checked == true) {
+                    grupos_usuarios[i].checked = true;
+                    usuarios[i].checked = true;
+                    empresa[i].checked = true;
+                }
+                else{
+                    grupos_usuarios[i].checked = false;
+                    usuarios[i].checked = false;
+                    if (config_empresa[i].checked == true || config_asistencia[i].checked == true || reportes[i].checked == true) {
+                        empresa[i].checked = true;
+                    }
+                    else{
+                        empresa[i].checked = false;
+                    }
+                }
+            }
+
+            reportess.onchange=function(){
+                if (reportess.checked == true){
+                    asistencia[i].checked = true;
+                    accesos[i].checked = true;
+                    empresa[i].checked = true;
+                }
+                else{
+                    asistencia[i].checked = false;
+                    accesos[i].checked = false;
+                    if (config_empresa[i].checked == true || config_asistencia[i].checked == true || admin_usuarios[i].checked == true) {
+                        empresa[i].checked = true;
+                    }
+                    else{
+                        empresa[i].checked = false;
+                    }
+                }
+            }
+
+            horarioss.onchange=function(){
+                if (horarioss.checked == true) {
+                    config_asistencia[i].checked = true;
+                    empresa[i].checked = true;
+                }
+                else{
+                    if (sedes[i].checked == true) {
+                        config_asistencia[i].checked = true;
+                    }
+                    else{
+                        config_asistencia[i].checked = false;
+                    }
+                    if ( config_empresa[i].checked==false && sedes[i].checked==false && grupos_usuarios[i].checked==false && usuarios[i].checked==false && asistencia[i].checked==false && accesos[i].checked==false) {
+                        empresa[i].checked = false;
+                    }
+                }
+            }
+
+            sedess.onchange=function(){
+                if (sedess.checked == true) {
+                    config_asistencia[i].checked = true;
+                    empresa[i].checked = true;
+                }
+                else{
+                    if (horarios[i].checked == true) {
+                        config_asistencia[i].checked = true;
+                    }
+                    else{
+                        config_asistencia[i].checked = false;
+                    }
+                    if ( config_empresa[i].checked==false && horarios[i].checked==false && grupos_usuarios[i].checked==false && usuarios[i].checked==false && asistencia[i].checked==false && accesos[i].checked==false) {
+                        empresa[i].checked = false;
+                    }
+                }    
+            }
+
+            grupos_usuarioss.onchange=function(){
+                if (grupos_usuarioss.checked == true) {
+                admin_usuarios[i].checked = true;
+                empresa[i].checked = true;
+                }
+                else{
+                    if (usuarios[i].checked == true) {
+                        admin_usuarios[i].checked = true;
+                    }
+                    else{
+                        admin_usuarios[i].checked = false;
+                    }
+                    if ( config_empresa[i].checked==false && horarios[i].checked==false && sedes[i].checked==false && usuarios[i].checked==false && asistencia[i].checked==false && accesos[i].checked==false) {
+                        empresa[i].checked = false;
+                    }
+                }    
+            }
+            
+            usuarioss.onchange=function(){
+                if (usuarioss.checked == true) {
+                    admin_usuarios[i].checked = true;
+                    empresa[i].checked = true;
+                }
+                else{
+                    if (grupos_usuarios[i].checked == true) {
+                        admin_usuarios[i].checked = true;
+                    }
+                    else{
+                        admin_usuarios[i].checked = false;
+                    }
+                    if ( config_empresa[i].checked==false && horarios[i].checked==false && sedes[i].checked==false && grupos_usuarios[i].checked==false && asistencia[i].checked==false && accesos[i].checked==false) {
+                        empresa[i].checked = false;
+                    }
+                }    
+            }
+
+            asistenciaa.onchange=function(){
+                if (asistenciaa.checked == true) {
+                    reportes[i].checked = true;
+                    empresa[i].checked = true;
+                }
+                else{
+                    if (accesos[i].checked == true) {
+                        reportes[i].checked = true;
+                    }
+                    else{
+                        reportes[i].checked = false;
+                    }
+                    if ( config_empresa[i].checked==false && horarios[i].checked==false && sedes[i].checked==false && grupos_usuarios[i].checked==false && usuarios[i].checked==false && accesos[i].checked==false) {
+                        empresa[i].checked = false;
+                    }
+                }    
+            }
+
+            accesoss.onchange=function(){
+                if (accesoss.checked == true) {
+                    reportes[i].checked = true;
+                    empresa[i].checked = true;
+                }
+                else{
+                    if (asistencia[i].checked == true) {
+                        reportes[i].checked = true;
+                    }
+                    else{
+                        reportes[i].checked = false;
+                    }
+                    if ( config_empresa[i].checked==false && horarios[i].checked==false && sedes[i].checked==false && grupos_usuarios[i].checked==false && usuarios[i].checked==false && asistencia[i].checked==false) {
+                        empresa[i].checked = false;
+                    }
+                }    
+            }
+
+        }
+
+    
+
+        // function checkEmpresa(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         config_empresa.checked = true;
+        //         config_asistencia.checked = true;
+        //         horarios.checked = true;
+        //         sedes.checked = true;
+        //         admin_usuarios.checked = true;
+        //         grupos_usuarios.checked = true;
+        //         usuarios.checked = true;
+        //         reportes.checked = true;
+        //         asistencia.checked = true;
+        //         accesos.checked = true;
+        //     }
+        //     else{
+        //         config_empresa.checked = false;
+        //         config_asistencia.checked = false;
+        //         horarios.checked = false;
+        //         sedes.checked = false;
+        //         admin_usuarios.checked = false;
+        //         grupos_usuarios.checked = false;
+        //         usuarios.checked = false;
+        //         reportes.checked = false;
+        //         asistencia.checked = false;
+        //         accesos.checked = false;
+        //     }
+        // }
+
+        // function checkCEmpresa(myCheckbox){
+        //     if ( myCheckbox.checked == true ) {
+        //         empresa.checked = true;
+        //     }
+        //     else{
+        //         if (config_asistencia.checked == true || admin_usuarios.checked == true || reportes.checked == true) {
+        //             empresa.checked = true;
+        //         }
+        //         else{
+        //             empresa.checked = false;
+        //         }
+        //     }
+            
+        // }
+
+
+        // function checkCAsistencia(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         horarios.checked = true;
+        //         sedes.checked = true;
+        //         empresa.checked = true;
+        //     }
+        //     else{
+        //         horarios.checked = false;
+        //         sedes.checked = false;
+        //         if (config_empresa.checked == true || admin_usuarios.checked == true || reportes.checked == true) {
+        //             empresa.checked = true;
+        //         }
+        //         else{
+        //             empresa.checked = false;
+        //         }
+        //     }
+        // }
+
+        // function checkAUsuarios(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         grupos_usuarios.checked = true;
+        //         usuarios.checked = true;
+        //         empresa.checked = true;
+        //     }
+        //     else{
+        //         grupos_usuarios.checked = false;
+        //         usuarios.checked = false;
+        //         if (config_empresa.checked == true || config_asistencia.checked == true || reportes.checked == true) {
+        //             empresa.checked = true;
+        //         }
+        //         else{
+        //             empresa.checked = false;
+        //         }
+        //     }
+        // }
+
+        // function checkREmpresa(myCheckbox){
+        //     if (myCheckbox.checked == true){
+        //         asistencia.checked = true;
+        //         accesos.checked = true;
+        //         empresa.checked = true;
+        //     }
+        //     else{
+        //         asistencia.checked = false;
+        //         accesos.checked = false;
+        //         if (config_empresa.checked == true || config_asistencia.checked == true || admin_usuarios.checked == true) {
+        //             empresa.checked = true;
+        //         }
+        //         else{
+        //             empresa.checked = false;
+        //         }
+        //     }
+        // }
+
+        // function checkHorarios(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         config_asistencia.checked = true;
+        //         empresa.checked = true;
+        //     }
+        //     else{
+        //         if (sedes.checked == true) {
+        //             config_asistencia.checked = true;
+        //         }
+        //         else{
+        //             config_asistencia.checked = false;
+        //         }
+        //         if ( config_empresa.checked==false && sedes.checked==false && grupos_usuarios.checked==false && usuarios.checked==false && asistencia.checked==false && accesos.checked==false) {
+        //             empresa.checked = false;
+        //         }
+
+        //     }
+        // }
+
+        // function checkSedes(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         config_asistencia.checked = true;
+        //         empresa.checked = true;
+        //     }
+        //     else{
+        //         if (horarios.checked == true) {
+        //             config_asistencia.checked = true;
+        //         }
+        //         else{
+        //             config_asistencia.checked = false;
+        //         }
+        //         if ( config_empresa.checked==false && horarios.checked==false && grupos_usuarios.checked==false && usuarios.checked==false && asistencia.checked==false && accesos.checked==false) {
+        //             empresa.checked = false;
+        //         }
+        //     }
+        // }
+
+        // function checkGUsuarios(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         admin_usuarios.checked = true;
+        //         empresa.checked = true;
+        //     }
+        //     else{
+        //         if (usuarios.checked == true) {
+        //             admin_usuarios.checked = true;
+        //         }
+        //         else{
+        //             admin_usuarios.checked = false;
+        //         }
+        //         if ( config_empresa.checked==false && horarios.checked==false && sedes.checked==false && usuarios.checked==false && asistencia.checked==false && accesos.checked==false) {
+        //             empresa.checked = false;
+        //         }
+        //     }
+        // }
+
+        // function checkUsuarios(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         admin_usuarios.checked = true;
+        //         empresa.checked = true;
+        //     }
+        //     else{
+        //         if (grupos_usuarios.checked == true) {
+        //             admin_usuarios.checked = true;
+        //         }
+        //         else{
+        //             admin_usuarios.checked = false;
+        //         }
+        //         if ( config_empresa.checked==false && horarios.checked==false && sedes.checked==false && grupos_usuarios.checked==false && asistencia.checked==false && accesos.checked==false) {
+        //             empresa.checked = false;
+        //         }
+        //     }
+        // }
+
+        // function checkAsistencia(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         reportes.checked = true;
+        //         empresa.checked = true;
+        //     }
+        //     else{
+        //         if (accesos.checked == true) {
+        //             reportes.checked = true;
+        //         }
+        //         else{
+        //             reportes.checked = false;
+        //         }
+        //         if ( config_empresa.checked==false && horarios.checked==false && sedes.checked==false && grupos_usuarios.checked==false && usuarios.checked==false && accesos.checked==false) {
+        //             empresa.checked = false;
+        //         }
+        //     }
+        // }
+
+        // function checkAccesos(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         reportes.checked = true;
+        //         empresa.checked = true;
+        //     }
+        //     else{
+        //         if (asistencia.checked == true) {
+        //             reportes.checked = true;
+        //         }
+        //         else{
+        //             reportes.checked = false;
+        //         }
+        //         if ( config_empresa.checked==false && horarios.checked==false && sedes.checked==false && grupos_usuarios.checked==false && usuarios.checked==false && asistencia.checked==false) {
+        //             empresa.checked = false;
+        //         }
+        //     }
+        // }
+
+        let ventas = document.querySelectorAll('.ventas')
+        let config_campanas = document.querySelectorAll('.config-campanas')
+        let campanas = document.querySelectorAll('.campanas')
+        let pestanas = document.querySelectorAll('.pestanas')
+        let estados = document.querySelectorAll('.estados')
+        let bloques_campos = document.querySelectorAll('.bloques-campos')
+        let campos = document.querySelectorAll('.campos')
+        let reportes_ventas = document.querySelectorAll('.reportes-ventas')
+        let reportes_1 = document.querySelectorAll('.reportes-1')
+        let reportes_2 = document.querySelectorAll('.reportes-2')
+
+
+        for (let j = 0; j < ventas.length; j++) {
+            let ventass = ventas[j];
+            let config_campanass = config_campanas[j];
+            let reportes_ventass = reportes_ventas[j];
+            let campanass = campanas[j];
+            let pestanass = pestanas[j];
+            let estadoss = estados[j];
+            let bloques_camposs = bloques_campos[j];
+            let camposs = campos[j];
+            let reportes_11 = reportes_1[j];
+            let reportes_22 = reportes_2[j];
+
+
+            ventass.onchange=function(){
+                if (ventass.checked == true) {
+                    config_campanas[j].checked = true;
+                    campanas[j].checked = true;
+                    pestanas[j].checked = true;
+                    estados[j].checked = true;
+                    bloques_campos[j].checked = true;
+                    campos[j].checked = true;
+                    reportes_ventas[j].checked = true;
+                    reportes_1[j].checked = true;
+                    reportes_2[j].checked = true;
+                }
+                else{
+                    config_campanas[j].checked = false;
+                    campanas[j].checked = false;
+                    pestanas[j].checked = false;
+                    estados[j].checked = false;
+                    bloques_campos[j].checked = false;
+                    campos[j].checked = false;
+                    reportes_ventas[j].checked = false;
+                    reportes_1[j].checked = false;
+                    reportes_2[j].checked = false;
+                }   
+            }
+
+            config_campanass.onchange=function(){
+                if ( config_campanass.checked == true ) {
+                    ventas[j].checked = true;
+                    campanas[j].checked = true;
+                    pestanas[j].checked = true;
+                    estados[j].checked = true;
+                    bloques_campos[j].checked = true;
+                    campos[j].checked = true;
+                }
+                else{
+                    ventas[j].checked = false;
+                    campanas[j].checked = false;
+                    pestanas[j].checked = false;
+                    estados[j].checked = false;
+                    bloques_campos[j].checked = false;
+                    campos[j].checked = false;
+                    if (reportes_ventas[j].checked == true ) {
+                        ventas[j].checked = true;
+                    }
+                    else{
+                        ventas[j].checked = false;
+                    }
+                }    
+            }
+
+            reportes_ventass.onchange=function(){
+                if ( reportes_ventass.checked == true ) {
+                    ventas[j].checked = true;
+                    reportes_1[j].checked = true;
+                    reportes_2[j].checked = true;
+                }
+                else{
+                    reportes_1[j].checked = false;
+                    reportes_2[j].checked = false;
+                    if (config_campanas[j].checked == true ) {
+                        ventas[j].checked = true;
+                    }
+                    else{
+                        ventas[j].checked = false;
+                    }
+                }    
+            }
+
+            campanass.onchange=function(){
+                if (campanass.checked == true) {
+                    config_campanas[j].checked = true;
+                    ventas[j].checked=true;
+                }
+                else{
+                    if (pestanas[j].checked == true || estados[j].checked == true || bloques_campos[j].checked == true || campos[j].checked == true) {
+                        config_campanas[j].checked = true;
+                    }
+                    else{
+                        config_campanas[j].checked = false;
+                    }
+                    if (pestanas[j].checked == false && estados[j].checked == false && bloques_campos[j].checked == false && campos[j].checked == false && reportes_1[j].checked == false && reportes_2[j].checked == false) {
+                        ventas[j].checked=false;
+                    }
+                }
+
+            }
+
+            pestanass.onchange=function(){
+                if (pestanass.checked == true) {
+                    config_campanas[j].checked = true;
+                    ventas[j].checked=true;
+                }
+                else{
+                    if (campanas[j].checked == true || estados[j].checked == true || bloques_campos[j].checked == true || campos[j].checked == true) {
+                        config_campanas[j].checked = true;
+                    }
+                    else{
+                        config_campanas[j].checked = false;
+                    }
+                    if (campanas[j].checked == false && estados[j].checked == false && bloques_campos[j].checked == false && campos[j].checked == false && reportes_1[j].checked == false && reportes_2[j].checked == false) {
+                        ventas[j].checked=false;
+                    }
+                }    
+            }
+
+            estadoss.onchange=function(){
+                if (estadoss.checked == true) {
+                    config_campanas[j].checked = true;
+                    ventas[j].checked=true;
+                }
+                else{
+                    if (campanas[j].checked == true || pestanas[j].checked == true || bloques_campos[j].checked == true || campos[j].checked == true) {
+                        config_campanas[j].checked = true;
+                    }
+                    else{
+                        config_campanas[j].checked = false;
+                    }
+                    
+                    if (campanas[j].checked == false && pestanas[j].checked == false && bloques_campos[j].checked == false && campos[j].checked == false && reportes_1[j].checked == false && reportes_2[j].checked == false) {
+                        ventas[j].checked=false;
+                    }
+                }
+            }
+
+            bloques_camposs.onchange=function(){
+                if (bloques_camposs.checked == true) {
+                    config_campanas[j].checked = true;
+                    ventas[j].checked=true;
+                }
+                else{
+                    if (campanas[j].checked == true || pestanas[j].checked == true || estados[j].checked == true || campos[j].checked == true) {
+                        config_campanas[j].checked = true;
+                    }
+                    else{
+                        config_campanas[j].checked = false;
+                    }
+                    if (campanas[j].checked == false && pestanas[j].checked == false && estados[j].checked == false && campos[j].checked == false && reportes_1[j].checked == false && reportes_2[j].checked == false) {
+                        ventas[j].checked=false;
+                    }
+                }
+            }
+
+            camposs.onchange=function(){
+                if (camposs.checked == true) {
+                    config_campanas[j].checked = true;
+                    ventas[j].checked=true;
+                }
+                else{
+                    if (campanas[j].checked == true || pestanas[j].checked == true || estados[j].checked == true || bloques_campos[j].checked == true) {
+                        config_campanas[j].checked = true;
+                    }
+                    else{
+                        config_campanas[j].checked = false;
+                    }
+                    if (campanas[j].checked == false && pestanas[j].checked == false && estados[j].checked == false && bloques_campos[j].checked == false && reportes_1[j].checked == false && reportes_2[j].checked == false) {
+                        ventas[j].checked=false;
+                    }
+                }
+            }
+
+            reportes_11.onchange=function(){
+                if (reportes_11.checked == true) {
+                    reportes_ventas[j].checked = true;
+                    ventas[j].checked=true;
+                }
+                else{
+                    if (reportes_2[j].checked == true ) {
+                        reportes_ventas[j].checked = true;
+                    }
+                    else{
+                        reportes_ventas[j].checked = false;
+                    }
+                    if (campanas[j].checked == false && pestanas[j].checked == false && estados[j].checked == false && bloques_campos[j].checked == false && campos[j].checked == false && reportes_2[j].checked == false) {
+                        ventas[j].checked=false;
+                    }
+                }
+            }
+
+            reportes_22.onchange=function(){
+                if (reportes_22.checked == true) {
+                    reportes_ventas[j].checked = true;
+                    ventas[j].checked=true;
+                }
+                else{
+                    if (reportes_1[j].checked == true ) {
+                        reportes_ventas[j].checked = true;
+                    }
+                    else{
+                        reportes_ventas[j].checked = false;
+                    }
+                    if (campanas[j].checked == false && pestanas[j].checked == false && estados[j].checked == false && bloques_campos[j].checked == false && campos[j].checked == false && reportes_1[j].checked == false) {
+                        ventas[j].checked=false;
+                    }    
+                }
+            }
+
+        }
+
+
+
+
+        // function checkVentas(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         config_campanas.checked = true;
+        //         campanas.checked = true;
+        //         pestanas.checked = true;
+        //         estados.checked = true;
+        //         bloques_campos.checked = true;
+        //         campos.checked = true;
+        //         reportes_ventas.checked = true;
+        //         reportes_1.checked = true;
+        //         reportes_2.checked = true;
+        //     }
+        //     else{
+        //         config_campanas.checked = false;
+        //         campanas.checked = false;
+        //         pestanas.checked = false;
+        //         estados.checked = false;
+        //         bloques_campos.checked = false;
+        //         campos.checked = false;
+        //         reportes_ventas.checked = false;
+        //         reportes_1.checked = false;
+        //         reportes_2.checked = false;
+        //     }
+        // }
+
+
+        // function checkCCampanas(myCheckbox){
+        //     if ( myCheckbox.checked == true ) {
+        //         ventas.checked = true;
+        //         campanas.checked = true;
+        //         pestanas.checked = true;
+        //         estados.checked = true;
+        //         bloques_campos.checked = true;
+        //         campos.checked = true;
+        //     }
+        //     else{
+        //         ventas.checked = false;
+        //         campanas.checked = false;
+        //         pestanas.checked = false;
+        //         estados.checked = false;
+        //         bloques_campos.checked = false;
+        //         campos.checked = false;
+        //         if (reportes_ventas.checked == true ) {
+        //             ventas.checked = true;
+        //         }
+        //         else{
+        //             ventas.checked = false;
+        //         }
+        //     }
+            
+        // }
+
+        // function checkRVentas(myCheckbox){
+        //     if ( myCheckbox.checked == true ) {
+        //         ventas.checked = true;
+        //         reportes_1.checked = true;
+        //         reportes_2.checked = true;
+        //     }
+        //     else{
+        //         reportes_1.checked = false;
+        //         reportes_2.checked = false;
+        //         if (config_campanas.checked == true ) {
+        //             ventas.checked = true;
+        //         }
+        //         else{
+        //             ventas.checked = false;
+        //         }
+        //     }
+            
+        // }
+
+        // function checkCampanas(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         config_campanas.checked = true;
+        //         ventas.checked=true;
+        //     }
+        //     else{
+        //         if (pestanas.checked == true || estados.checked == true || bloques_campos.checked == true || campos.checked == true) {
+        //             config_campanas.checked = true;
+        //         }
+        //         else{
+        //             config_campanas.checked = false;
+        //         }
+        //         if (pestanas.checked == false && estados.checked == false && bloques_campos.checked == false && campos.checked == false && reportes_1.checked == false && reportes_2.checked == false) {
+        //             ventas.checked=false;
+        //         }
+        //     }
+        // }
+
+        // function checkPestanas(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         config_campanas.checked = true;
+        //         ventas.checked=true;
+        //     }
+        //     else{
+        //         if (campanas.checked == true || estados.checked == true || bloques_campos.checked == true || campos.checked == true) {
+        //             config_campanas.checked = true;
+        //         }
+        //         else{
+        //             config_campanas.checked = false;
+        //         }
+        //         if (campanas.checked == false && estados.checked == false && bloques_campos.checked == false && campos.checked == false && reportes_1.checked == false && reportes_2.checked == false) {
+        //             ventas.checked=false;
+        //         }
+        //     }
+        // }
+
+        // function checkEstados(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         config_campanas.checked = true;
+        //         ventas.checked=true;
+        //     }
+        //     else{
+        //         if (campanas.checked == true || pestanas.checked == true || bloques_campos.checked == true || campos.checked == true) {
+        //             config_campanas.checked = true;
+        //         }
+        //         else{
+        //             config_campanas.checked = false;
+        //         }
+                
+        //         if (campanas.checked == false && pestanas.checked == false && bloques_campos.checked == false && campos.checked == false && reportes_1.checked == false && reportes_2.checked == false) {
+        //             ventas.checked=false;
+        //         }
+        //     }
+        // }
+
+        // function checkBCampos(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         config_campanas.checked = true;
+        //         ventas.checked=true;
+        //     }
+        //     else{
+        //         if (campanas.checked == true || pestanas.checked == true || estados.checked == true || campos.checked == true) {
+        //             config_campanas.checked = true;
+        //         }
+        //         else{
+        //             config_campanas.checked = false;
+        //         }
+        //         if (campanas.checked == false && pestanas.checked == false && estados.checked == false && campos.checked == false && reportes_1.checked == false && reportes_2.checked == false) {
+        //             ventas.checked=false;
+        //         }
+        //     }
+        // }
+
+        // function checkCampos(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         config_campanas.checked = true;
+        //         ventas.checked=true;
+        //     }
+        //     else{
+        //         if (campanas.checked == true || pestanas.checked == true || estados.checked == true || bloques_campos.checked == true) {
+        //             config_campanas.checked = true;
+        //         }
+        //         else{
+        //             config_campanas.checked = false;
+        //         }
+        //         if (campanas.checked == false && pestanas.checked == false && estados.checked == false && bloques_campos.checked == false && reportes_1.checked == false && reportes_2.checked == false) {
+        //             ventas.checked=false;
+        //         }
+        //     }
+        // }
+
+        // function checkR1(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         reportes_ventas.checked = true;
+        //         ventas.checked=true;
+        //     }
+        //     else{
+        //         if (reportes_2.checked == true ) {
+        //             reportes_ventas.checked = true;
+        //         }
+        //         else{
+        //             reportes_ventas.checked = false;
+        //         }
+        //         if (campanas.checked == false && pestanas.checked == false && estados.checked == false && bloques_campos.checked == false && campos.checked == false && reportes_2.checked == false) {
+        //             ventas.checked=false;
+        //         }
+        //     }
+        // }
+
+        // function checkR2(myCheckbox){
+        //     if (myCheckbox.checked == true) {
+        //         reportes_ventas.checked = true;
+        //         ventas.checked=true;
+        //     }
+        //     else{
+        //         if (reportes_1.checked == true ) {
+        //             reportes_ventas.checked = true;
+        //         }
+        //         else{
+        //             reportes_ventas.checked = false;
+        //         }
+        //         if (campanas.checked == false && pestanas.checked == false && estados.checked == false && bloques_campos.checked == false && campos.checked == false && reportes_1.checked == false) {
+        //             ventas.checked=false;
+        //         }    
+        //     }
+        // }
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
